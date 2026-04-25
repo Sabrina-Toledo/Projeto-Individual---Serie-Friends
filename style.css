@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    color: #785BD8;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    background: #F7F0FF;
+    width: 100%;
+    height: 50px;
+
+}
+
+/*
+Css do navbar
+*/
+
+.img-friends {
+    display: flex;
+    align-items: center;
+}
+
+
+.img-friends img {
+    height: 80px;
+    width: auto;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #785BD8;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.conteiner-friends {
+    background-image: url(img/capa.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espaco {
+    margin: 20px;
+    background-color: #FFFFFF;
+}
+
+.personagens {
+    background-color: #F7F0FF;
+    padding: 60px;
+    text-align: center;
+}
+
+.personagens h1 {
+    color: #6c4ccf;
+    margin-bottom: 20px;
+    font-size: 55px;
+}
+
+.personagens h6 {
+    color: #6c4ccf;
+    margin-bottom: 50px;
+    font-size: 20px;
+
+}
+
+.container-personagens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.card-personagens {
+    width: 350px;
+    text-align: center;
+}
+
+.card-personagens img {
+    width: 100%;
+}
+
+.card-personagens p {
+    margin-top: 15px;
+    color: #6c4ccf;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container-historia{
+background-color: #FFFFFF;
+width: 100%;
+padding: 40px 40px 40px 40px;
+}
+
+.container-historia h1 {
+color: #6c4ccf;
+font-size: 55px;
+margin-top: 10px;
+margin-bottom: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.filho{
+width: 100%;
+height: 750px;
+background-color: #F7F0FF;
+border-radius: 10px;
+padding: 50px 10px 50px 10px;
+margin: 10px;
+}
+
+.filho p{
+padding: 15px;
+font-size: 20px;
+color: #6c4ccf;
+}
+
+/*lembrar de adicionar as img*/
+
+
+.container-quiz{
+background-color: #F7F0FF;
+width: 100%;
+padding: 40px 40px 40px 40px;
+}
+
+.container-quiz h1 {
+color: #6c4ccf;
+font-size: 55px;
+margin-top: 10px;
+margin-bottom: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.container-quiz h6 {
+font-size: 25px;
+color: #6c4ccf;
+font-weight: bold;
+margin-top: 20px;
+margin-bottom: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+    
+
+.filho-quiz{
+width: 100%;
+height: auto;
+background-color: #FFFFFF;
+border-radius: 10px;
+padding: 60px 10px 50px 10px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px;
+justify-items: center;
+}
+
+
+.filho-quiz p{
+padding: 15px;
+font-size: 20px;
+color: #6c4ccf;
+font-weight: bold;
+padding: 15px;
+}
+
+
+.card-perso {
+    width: 280px;
+    text-align: center;
+    
+}
+
+.card-perso img {
+    width: 100%;
+}
