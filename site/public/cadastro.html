@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_cadastro.css">
+
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="img-friends">
+            <img src="./assets/img/friends.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="cardErro" id="cardErro">
+        O seu cadastro foi realizado com sucesso!
+    </div>
+
+    <div class="container" id="cadastro">
+
+        <div class="img">
+            <img src="./assets/img/friends-cadastrar.jpg" alt="friendsCadastrarLogin">
+        </div>
+
+
+        <div class="caixaBranca">
+
+            <div class="titulo">
+                Faça o seu cadastro!
+            </div>
+
+            <div class="campo">
+                <span>Digite o seu nome</span>
+                <input type="text" id="input_nome" placeholder="">
+                <div class="error" id="nome-required-error">O campo nome não pode estar vazio</div>
+                <div class="error" id="nome-invalid-error">Insira um nome valido</div>
+            </div>
+            <br><br>
+
+            <div class="campo">
+                <span>Digite o seu e-mail</span>
+                <input type="email" id="input_email">
+                <div class="error" id="email-required-error">O campo e-mail não pode estar vazio</div>
+                <div class="error" id="email-invalid-error">E-mail está inválido</div>
+                <div class="error" id="email-falta-error">E-mail deve conter @ e .</div>
+                <div class="error" id="email-finalizacao-error">E-mail deve finalizar com .com ou .br</div>
+            </div>
+            <br><br>
+
+            <div class="campo">
+                <span>Crie a sua senha</span>
+                <input type="password" id="input_senha">
+                <small style="color: #430dda;">*Deve conter pelo menos 1 letra maiúscula, 1 letra minúscula, 1 caractere
+                    especial e 1 número </small>
+                <div class="error" id="senha-required-error">O campo senha não pode estar vazio</div>
+                <div class="error" id="senha-comprimento-error">Senha deve conter pelo menos 6 caracteres.</div>
+                <div class="error" id="senha-numero-error">Senha deve conter pelo menos um número.</div>
+                <div class="error" id="senha-caractere-error">Senha deve conter pelo menos um caractere especial.</div>
+                <div class="error" id="senha-maiuscula-error">Senha deve conter pelo menos uma letra maiúscula.</div>
+                <div class="error" id="senha-minuscula-error">Senha deve conter pelo menos uma letra minúscula.</div>
+            </div>
+            <br><br>
+
+            <div class="campo">
+                <span>Confirme a sua senha</span>
+                <input type="password" id="input_confirmacaoSenha">
+                <div class="error" id="confirmacao-required-error">Campo de confirmação de senha não pode estar vazio
+                </div>
+                <div class="error" id="confirmacao-invalid-error">Senhas não são compatíveis.</div>
+            </div>
+            <br><br>
+
+            <div class="buttonCadastro">
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    function cadastrar() {
+        let nome = input_nome.value;
+        let email = input_email.value;
+        let senha = input_senha.value;
+        let confirmacaoSenha = input_confirmacaoSenha.value;
+
+        let valido = true;
+
+        let numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let caracteres = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', '|', ';', ':', "'", ',', '.', '<', '>', '?', '/', '"'];
+
+        // validando vazio no nome
+        if (nome === '') {
+            valido = false;
+            document.getElementById('nome-required-error').style.display = "block";
+        } else {
+            document.getElementById('nome-required-error').style.display = "none";
+        }
+        // validando tamanho no nome
+        if (nome.length <= 2) {
+            valido = false;
+            document.getElementById(`nome-invalid-error`).style.display = 'block';
+        } else {
+            document.getElementById(`nome-invalid-error`).style.display = 'none';
+        }
+
+        // validando vazio no email
+        if (email === '') {
+            valido = false;
+            document.getElementById('email-required-error').style.display = "block";
+        } else {
+            document.getElementById('email-required-error').style.display = "none";
+        }
+        // validando 
+        if (!(email.includes("@") && email.includes("."))) {
+            valido = false;
+            document.getElementById('email-falta-error').style.display = 'block';
+        } else {
+            document.getElementById('email-falta-error').style.display = 'none';
+        }
+
+        if (!(email.endsWith(".com") || email.endsWith(".br"))) {
+            valido = false;
+            document.getElementById('email-invalid-error').style.display = 'block';
+            document.getElementById('email-finalizacao-error').style.display = 'block';
+        } else {
+            document.getElementById('email-invalid-error').style.display = 'none';
+            document.getElementById('email-finalizacao-error').style.display = 'none';
+        }
+
+        // validando vazio na senha
+        if (senha === '') {
+            valido = false;
+            document.getElementById('senha-required-error').style.display = "block";
+        } else {
+            document.getElementById('senha-required-error').style.display = "none";
+        }
+
+        // validando comprimento da senha 
+
+        if (senha.length < 6) {
+            valido = false;
+            document.getElementById('senha-comprimento-error').style.display = "block";
+        } else {
+            document.getElementById('senha-comprimento-error').style.display = "none";
+        }
+
+        // validando se tem número
+        let temNumero = false;
+        for (let i = 0; i < numeros.length; i++) {
+            if (senha.includes(numeros[i])) {
+                temNumero = true;
+            }
+        }
+
+        if (!temNumero) {
+            valido = false;
+            document.getElementById('senha-numero-error').style.display = "block";
+        } else {
+            document.getElementById('senha-numero-error').style.display = "none";
+        }
+
+        // validando se tem caracteres
+        let temCaractere = false;
+        for (let i = 0; i < caracteres.length; i++) {
+            if (senha.includes(caracteres[i])) {
+                temCaractere = true;
+            }
+        }
+
+        if (!temCaractere) {
+            valido = false;
+            document.getElementById('senha-caractere-error').style.display = "block";
+        } else {
+            document.getElementById('senha-caractere-error').style.display = "none";
+        }
+
+
+        // validando se tem letra maiuscula
+
+        if (senha == senha.toLowerCase()) {
+            valido = false;
+            document.getElementById('senha-maiuscula-error').style.display = "block";
+        } else {
+            document.getElementById('senha-maiuscula-error').style.display = "none";
+        }
+
+        // validando se tem letra minuscula
+
+        if (senha == senha.toUpperCase()) {
+            valido = false;
+            document.getElementById('senha-minuscula-error').style.display = "block";
+        } else {
+            document.getElementById('senha-minuscula-error').style.display = "none";
+        }
+
+        // validando vazio no confirmação de senha
+        if (confirmacaoSenha === '') {
+            valido = false;
+            document.getElementById('confirmacao-required-error').style.display = "block";
+        } else {
+            document.getElementById('confirmacao-required-error').style.display = "none";
+        }
+
+        // validando se a senhas são iguais
+        if (!(confirmacaoSenha === senha)) {
+            valido = false;
+            document.getElementById('confirmacao-invalid-error').style.display = "block";
+        } else {
+            document.getElementById('confirmacao-invalid-error').style.display = "none";
+        }
+
+
+        if (valido) {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nome,
+                    emailServer: email,
+                    senhaServer: senha,
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        document.getElementById("cardErro").style.display = "block";
+
+
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, "2000");
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+        }
+    }
+
+</script>
