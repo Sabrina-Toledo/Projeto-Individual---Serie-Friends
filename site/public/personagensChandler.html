@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_personagens.css">
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cabecalho">
+        <div class="img-friends">
+            <img src="./assets/img/friends-logo.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-personagem" id="historia">
+
+        <div class="box">
+            <div class="h1-img">
+                <p>Conheça o Chandler Bing</p>
+            </div>
+
+        </div>
+
+        <div class="box1">
+            <div class="box1-img">
+                <img src="./assets/img/friendsNoSofa.jpeg" alt="">
+                <p>Chandler Bing é conhecido principalmente pelo seu humor sarcástico e pelas piadas feitas nos momentos
+                    mais inesperados. Seu jeito engraçado e irônico se tornou uma das marcas mais famosas de Friends,
+                    trazendo leveza até para situações difíceis.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="espaço"></div>
+
+        <div class="box2">
+            <div class="box2-img">
+                <p>
+                    Apesar da aparência descontraída, Chandler é um personagem bastante inseguro emocionalmente. Muitas
+                    vezes ele usa o humor como forma de esconder medos, inseguranças e dificuldades para demonstrar
+                    sentimentos. Essa característica torna o personagem mais humano e próximo do público.
+                </p>
+                <img src="./assets/img/friendsRachelNoiva.jpeg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box3">
+            <div class="box3-img">
+                <img src="./assets/img/rachelRossPais.jpeg" alt="">
+                <p>
+                    Ao longo da série, Chandler passa por uma grande evolução pessoal. No começo, ele evita
+                    relacionamentos sérios e demonstra medo de compromisso, mas aos poucos amadurece e aprende a lidar
+                    melhor com suas emoções e responsabilidades.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="box4">
+            <div class="box4-img">
+                <p>
+                    Sua amizade com Joey Tribbiani é uma das mais divertidas da série, marcada por brincadeiras,
+                    companheirismo e momentos inesquecíveis. Os dois criam uma conexão leve e engraçada que conquista os
+                    fãs até hoje.
+                </p>
+                <img src="./assets/img/monicaChandler.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box5">
+            <div class="box5-img">
+                <img src="./assets/img/casaMonica.jpg" alt="">
+                <p>
+                    Além disso, seu relacionamento com Monica Geller mostra um lado mais sensível e carinhoso da
+                    personagem. Chandler mistura humor, emoção e autenticidade, tornando-se um dos personagens mais
+                    queridos da série.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <a href="https://friends.fandom.com">Se você quiser saber mais sobre nosso querido personagem, acesse
+                aqui!</a>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+<script>
+    let cliques = 0; // variável global apenas para contar os cliques
+
+    function irParaFandom() {
+        cliques++;
+
+        if (cliques >= 1) {
+            alert("Redirecionando!");
+            window.location.href = 'https://friends.fandom.com';
+        }
+    }
+
+
+</script>

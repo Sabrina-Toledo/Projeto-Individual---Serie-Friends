@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_personagens.css">
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cabecalho">
+        <div class="img-friends">
+            <img src="./assets/img/friends-logo.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-personagem" id="historia">
+
+        <div class="box">
+            <div class="h1-img">
+                <p>Conheça o Joey Tribbiani</p>
+            </div>
+
+        </div>
+
+        <div class="box1">
+            <div class="box1-img">
+                <img src="./assets/img/friendsNoSofa.jpeg" alt="">
+                <p>
+                    Joey Tribbiani é conhecido por seu jeito divertido, descontraído e extremamente carismático. Em
+                    Friends, ele conquista o público com seu humor espontâneo, sua simplicidade e suas reações
+                    engraçadas em diferentes situações do cotidiano.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="espaço"></div>
+
+        <div class="box2">
+            <div class="box2-img">
+                <p>
+                    Apaixonado pela carreira de ator, Joey passa boa parte da série tentando crescer profissionalmente.
+                    Mesmo enfrentando dificuldades e momentos frustrantes, ele nunca desiste dos seus sonhos e mantém
+                    uma atitude positiva diante dos desafios.
+                </p>
+                <img src="./assets/img/friendsRachelNoiva.jpeg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box3">
+            <div class="box3-img">
+                <img src="./assets/img/rachelRossPais.jpeg" alt="">
+                <p>
+                    Sua personalidade é marcada pela lealdade e pelo grande coração. Joey está sempre disposto a ajudar
+                    os amigos, demonstrando carinho e companheirismo em diversos momentos da série. Sua amizade com
+                    Chandler Bing é uma das conexões mais fortes e divertidas do grupo.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="box4">
+            <div class="box4-img">
+                <p>
+                    Além disso, Joey é conhecido pelo seu jeito inocente e muitas vezes ingênuo, o que cria cenas
+                    extremamente engraçadas e memoráveis. Mesmo não sendo o personagem mais intelectual, ele compensa
+                    isso com sua sinceridade, empatia e energia positiva.
+                </p>
+                <img src="./assets/img/monicaChandler.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box5">
+            <div class="box5-img">
+                <img src="./assets/img/casaMonica.jpg" alt="">
+                <p>
+                    Com seu humor leve, frases marcantes e personalidade cativante, Joey se tornou um dos personagens
+                    mais queridos de Friends. Sua autenticidade e seu jeito acolhedor fazem com que ele continue
+                    conquistando fãs até hoje.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <a href="https://friends.fandom.com">Se você quiser saber mais sobre nosso querido personagem, acesse
+                aqui!</a>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+<script>
+    let cliques = 0; // variável global apenas para contar os cliques
+
+    function irParaFandom() {
+        cliques++;
+
+        if (cliques >= 1) {
+            alert("Redirecionando!");
+            window.location.href = 'https://friends.fandom.com';
+        }
+    }
+
+
+</script>

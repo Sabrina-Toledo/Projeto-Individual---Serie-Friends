@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_personagens.css">
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cabecalho">
+        <div class="img-friends">
+            <img src="./assets/img/friends-logo.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-personagem" id="historia">
+
+        <div class="box">
+            <div class="h1-img">
+                <p>Conheça o Ross Geller</p>
+            </div>
+
+        </div>
+
+        <div class="box1">
+            <div class="box1-img">
+                <img src="./assets/img/friendsNoSofa.jpeg" alt="">
+                <p>Ross Geller é conhecido por sua inteligência, sensibilidade e jeito emocional. Apaixonado por
+                    paleontologia, ele demonstra constantemente seu lado intelectual e curioso, mas também vive
+                    situações engraçadas por conta de sua timidez e insegurança em diversos momentos da série.
+
+                </p>
+            </div>
+
+        </div>
+
+        <div class="espaço"></div>
+
+        <div class="box2">
+            <div class="box2-img">
+                <p>
+                    Ao longo das temporadas, Ross enfrenta desafios pessoais e amorosos que ajudam no seu
+                    amadurecimento. Mesmo sendo um personagem mais racional, ele frequentemente age por impulso quando
+                    envolve sentimentos, principalmente em relação a Rachel Green.
+                </p>
+                <img src="./assets/img/friendsRachelNoiva.jpeg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box3">
+            <div class="box3-img">
+                <img src="./assets/img/rachelRossPais.jpeg" alt="">
+                <p>
+                    Seu relacionamento com Rachel é um dos principais fios da história, marcado por términos,
+                    reconciliações e momentos inesquecíveis. Apesar das dificuldades, Ross demonstra amar profundamente
+                    as pessoas ao seu redor e faz de tudo para proteger seus amigos e família.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="box4">
+            <div class="box4-img">
+                <p>
+                    Ross também conquista o público por suas cenas engraçadas e constrangedoras. Muitas vezes ele acaba
+                    entrando em situações caóticas por nervosismo ou excesso de preocupação, criando alguns dos momentos
+                    mais icônicos e divertidos da série.
+                </p>
+                <img src="./assets/img/monicaChandler.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box5">
+            <div class="box5-img">
+                <img src="./assets/img/casaMonica.jpg" alt="">
+                <p>
+                    Mesmo com seus defeitos e inseguranças, Ross é um personagem muito humano e verdadeiro. Sua mistura
+                    de inteligência, emoção e humor faz dele uma peça fundamental em Friends.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <a href="https://friends.fandom.com">Se você quiser saber mais sobre nosso querido personagem, acesse
+                aqui!</a>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+<script>
+    let cliques = 0; // variável global apenas para contar os cliques
+
+    function irParaFandom() {
+        cliques++;
+
+        if (cliques >= 1) {
+            alert("Redirecionando!");
+            window.location.href = 'https://friends.fandom.com';
+        }
+    }
+
+
+</script>

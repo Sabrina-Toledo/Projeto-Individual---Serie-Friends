@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_personagens.css">
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cabecalho">
+        <div class="img-friends">
+            <img src="./assets/img/friends-logo.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-personagem" id="historia">
+
+        <div class="box">
+            <div class="h1-img">
+                <p>Conheça a Rachel Green</p>
+            </div>
+
+        </div>
+
+        <div class="box1">
+            <div class="box1-img">
+                <img src="./assets/img/friendsNoSofa.jpeg" alt="">
+                <p>
+                    Rachel Green é uma das personagens mais icônicas de Friends. Sua história começa quando ela decide
+                    abandonar uma vida confortável para recomeçar do zero em Nova York, iniciando uma jornada cheia de
+                    amadurecimento, desafios e descobertas pessoais.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="espaço"></div>
+
+        <div class="box2">
+            <div class="box2-img">
+                <p>
+                    No início da série, Rachel é apresentada como alguém dependente da família e acostumada a ter tudo
+                    facilmente. Com o passar do tempo, ela aprende a lidar com responsabilidades, constrói sua
+                    independência e cresce tanto pessoalmente quanto profissionalmente, tornando sua evolução uma das
+                    mais marcantes da série.
+
+                </p>
+                <img src="./assets/img/friendsRachelNoiva.jpeg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box3">
+            <div class="box3-img">
+                <img src="./assets/img/rachelRossPais.jpeg" alt="">
+                <p>
+                    Sua personalidade é divertida, espontânea e muito emocional. Rachel demonstra tudo o que sente de
+                    forma intensa, seja felicidade, insegurança, ciúmes ou amor. Seu jeito comunicativo e impulsivo cria
+                    momentos engraçados e inesquecíveis, trazendo leveza e humor para a história.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="box4">
+            <div class="box4-img">
+                <p>
+                    Outro aspecto importante da personagem é sua determinação. Apaixonada pelo mundo da moda, Rachel
+                    trabalha duro para conquistar espaço na carreira e aprende a acreditar mais em si mesma. Sua
+                    trajetória mostra força, persistência e a busca constante por seus objetivos.
+                </p>
+                <img src="./assets/img/monicaChandler.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box5">
+            <div class="box5-img">
+                <img src="./assets/img/casaMonica.jpg" alt="">
+                <p>
+                    Além de sua evolução pessoal, Rachel também é essencial para a conexão do grupo. Sua amizade com
+                    Monica Geller, as brincadeiras com Joey Tribbiani e Chandler Bing, e sua história com Ross Geller
+                    fazem dela uma personagem querida até hoje, conquistando diferentes gerações com humor, emoção e
+                    autenticidade.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <a href="https://friends.fandom.com">Se você quiser saber mais sobre nossa querida personagem, acesse
+                aqui!</a>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+<script>
+    let cliques = 0; // variável global apenas para contar os cliques
+
+    function irParaFandom() {
+        cliques++;
+
+        if (cliques >= 1) {
+            alert("Redirecionando!");
+            window.location.href = 'https://friends.fandom.com';
+        }
+    }
+
+
+</script>

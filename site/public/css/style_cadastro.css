@@ -7,23 +7,28 @@
 
 body {
     padding-top: 100px;
-    background-color: #F7F0FF;
+    background: linear-gradient(#533f93, #aa96ed);
+    font-family: 'Nunito', sans-serif;
+
 }
 
 
 .cabecalho {
+    width: 100%;
+    height: 78px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%;
-    background: #FFFFFF;
-    width: 100%;
-    height: 60px;
+
+    padding: 0 8%;
+    background: #F0EBFF;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 }
 
@@ -34,16 +39,25 @@ Css do navbar
 .img-friends {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+
 }
 
 
 .img-friends img {
-    height: 80px;
+    height: 100px;
     width: auto;
 }
 
+.img-friends img:hover {
+    opacity: 0.85;
+}
+
+
 .nav-bar ul {
     display: flex;
+    align-items: center;
+
     list-style: none;
     gap: 20px;
 
@@ -51,9 +65,19 @@ Css do navbar
 
 .nav-bar a {
     text-decoration: none;
-    color: #785BD8;
-    font-weight: 500;
+    color: #6c4ccf;
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
     transition: 0.3s;
+    padding: 5px 5px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-bar a:hover {
+    color: #F1C40F;
 }
 
 

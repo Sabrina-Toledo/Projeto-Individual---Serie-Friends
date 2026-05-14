@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_personagens.css">
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cabecalho">
+        <div class="img-friends">
+            <img src="./assets/img/friends-logo.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-personagem" id="historia">
+
+        <div class="box">
+            <div class="h1-img">
+                <p>Conheça a Monica Geller</p>
+            </div>
+
+        </div>
+
+        <div class="box1">
+            <div class="box1-img">
+                <img src="./assets/img/friendsNoSofa.jpeg" alt="">
+                <p>
+                    Monica Geller é uma das personagens mais importantes de Friends. Conhecida por seu jeito competitivo
+                    e organizado, ela gosta de manter tudo sob controle, principalmente quando o assunto é limpeza e
+                    rotina. Apesar de suas manias, Monica demonstra ser extremamente carinhosa e dedicada às pessoas que
+                    ama.
+
+                </p>
+            </div>
+
+        </div>
+
+        <div class="espaço"></div>
+
+        <div class="box2">
+            <div class="box2-img">
+                <p>
+                    Desde o começo da série, Monica busca crescer profissionalmente como chef de cozinha. Sua
+                    determinação e esforço mostram uma personagem forte, que nunca desiste facilmente dos seus
+                    objetivos. Ao longo das temporadas, ela amadurece e aprende a lidar melhor com suas inseguranças e
+                    cobranças pessoais.
+                </p>
+                <img src="./assets/img/friendsRachelNoiva.jpeg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box3">
+            <div class="box3-img">
+                <img src="./assets/img/rachelRossPais.jpeg" alt="">
+                <p>
+                    Sua personalidade intensa rende muitos momentos engraçados e marcantes. Monica é competitiva em
+                    jogos, teimosa em discussões e muitas vezes exagera em situações simples, criando cenas divertidas
+                    que se tornaram icônicas entre os fãs da série.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="box4">
+            <div class="box4-img">
+                <p>
+                    Além disso, Monica funciona como o ponto de união do grupo. O apartamento dela é onde grande parte
+                    dos amigos se reúne, fortalecendo ainda mais os laços entre todos. Sua amizade com Rachel Green é
+                    uma das mais importantes da série, mostrando companheirismo e apoio em diferentes momentos.
+                </p>
+                <img src="./assets/img/monicaChandler.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box5">
+            <div class="box5-img">
+                <img src="./assets/img/casaMonica.jpg" alt="">
+                <p>
+                    Sua relação com Chandler Bing também representa uma das histórias mais queridas de Friends. Monica
+                    mistura humor, força e sensibilidade, tornando-se uma personagem marcante e essencial para o sucesso
+                    da série.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        </div>
+
+        <div>
+            <a href="https://friends.fandom.com">Se você quiser saber mais sobre nossa querida personagem, acesse
+                aqui!</a>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+<script>
+    let cliques = 0; // variável global apenas para contar os cliques
+
+    function irParaFandom() {
+        cliques++;
+
+        if (cliques >= 1) {
+            alert("Redirecionando!");
+            window.location.href = 'https://friends.fandom.com';
+        }
+    }
+
+
+</script>

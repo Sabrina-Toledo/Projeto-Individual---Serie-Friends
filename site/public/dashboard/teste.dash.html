@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style_dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <title>Dashboard</title>
+</head>
+
+<body>0
+    <div class="container">
+
+        <div class="barraLateral">
+
+            <div class="img-h1" id="dashboard">
+                <img src="../assets/img/img-png.png" alt="">
+                <p>Bem-vindo(a) ao seu perfil!</p>
+            </div>
+
+            <div class="nav-bar">
+                <a href="./dashboard.html#dashboard" class="nav-item">
+                    <img src="../assets/img/lagosta (1).png"> Dashboard geral
+                </a>
+
+                <a href="#" class="nav-item">
+                    <img src="../assets/img/lagosta (1).png"> Respostas gerais
+                </a>
+
+                <a href="#" class="nav-item">
+                    <img src="../assets/img/lagosta (1).png"> Porcentagem de semelhança
+                </a>
+            </div> <!-- NAV-BAR LATERAL-->
+
+            <div class="botao">
+                <button><a href="">Sair</a></button>
+            </div> <!-- BOTAO -->
+
+        </div> <!-- DIV LATERAL -->
+
+        <div class="main"> <!-- "CORPO" PARTE DAS KPI E GRAFICO-->
+
+            <div class="box"> <!-- PARTE DAS KPI E GRAFICO-->
+
+                <div class="box-info"> <!-- PARTE DAS KPIS-->
+
+                    <div class="kpi-box">
+                        <div class="h5-img">
+                            <p>A maioria das respostas foram:</p>
+                            <img src="../assets/img/lagosta (1).png">
+                        </div>
+                        <h1 class="informacao">A</h1>
+                        <a href="./respostas.html">Visualizar as demais respostas</a>
+                    </div>
+
+                    <div class="kpi-box">
+                        <div class="h5-img">
+                            <p>Porcentagem de semelhança:</p>
+                            <img src="../assets/img/lagosta (1).png">
+                        </div>
+
+                        <h1 class="informacao">30%</h1>
+                        <a href="">Visualizar porcentagem</a>
+                    </div>
+
+                </div> <!-- PARTE DAS KPIS-->
+
+                <div class="grafico">
+                    <h3>Com quem você mais se parece</h3>
+                    <div class="pontuacao">
+                        <canvas id="pontuacao"></canvas>
+                    </div>
+                </div>
+
+                <div class="box-info">
+                    <div class="kpi-box1"> <!-- PARTE DAS KPIS-->
+
+                        <div class="h5-img">
+                            <p>Explicação das respostas</p>
+                            <img src="../assets/img/lagosta (1).png">
+                        </div>
+
+                        <span class="legenda"> Maioria A: Você se parece com a <b style="color: fuchsia;"> Rachel
+                                Green</b></span>
+                        <span class="legenda">Maioria B: Você se parece com a <b style="color: red;"> Ross
+                                Geller</b></span>
+                        <span class="legenda">Maioria C: Você se parece com a <b style="color: blue;"> Chandler
+                                Bing</b></span>
+                        <span class="legenda">Maioria D: Você se parece com a <b style="color: rgb(225, 225, 4);">
+                                Phoebe Buffay</b></span>
+                        <span class="legenda">Maioria E: Você se parece com a <b style="color: orange;"> Monica
+                                Geller</b></span>
+                        <span class="legenda">Maioria F: Você se parece com a <b style="color: greenyellow;"> Joey
+                                Tribbiani</b></span>
+
+                    </div> <!-- PARTE DAS KPIS-->
+                </div>
+
+            </div> <!-- PARTE DAS KPI E GRAFICO-->
+
+        </div> <!-- MAIN -->
+
+    </div> <!-- DIV CONTAINER-->
+
+</body>
+
+</html>
+
+<script>
+
+
+    const data2 = {
+        labels: ['Questão 1', 'Questão 2', 'Questão 3', 'Questão 4', 'Questão 5'],
+        datasets: [{
+            label: 'Personalidade',
+            data: [1, 1, 4, 5, 6],
+            backgroundColor: ['#9276E4'],
+            borderColor: '#000000',
+            tension: 0.3,
+            fill: false,
+            pointRadius: 4,
+            pointHoverRadius: 5
+        }]
+    };
+    const letras = ['', 'A', 'B', 'C', 'D', 'E', 'F'];
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+
+            },
+
+            scales: {
+                y: {
+                    min: 0,
+                    max: 6,
+                    ticks: {
+                        callback: function (value) {
+                            return letras[value];
+                        },
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    };
+</script>
+
+<script>
+
+    let graficoBarras = new Chart(
+        document.getElementById('pontuacao'),
+        config2
+    );
+
+
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_personagens.css">
+    <title>Site Interativo - Friends</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cabecalho">
+        <div class="img-friends">
+            <img src="./assets/img/friends-logo.png" alt="friends">
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#historia">Historia</a></li>
+                <li><a href="">Quiz</a></li>
+                <li><a href="cadastro.html#cadastro">Cadastro</a></li>
+                <li><a href="login.html#login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-personagem" id="historia">
+
+        <div class="box">
+            <div class="h1-img">
+                <p>Conheça a Phobe Buffay</p>
+            </div>
+
+        </div>
+
+        <div class="box1">
+            <div class="box1-img">
+                <img src="./assets/img/friendsNoSofa.jpeg" alt="">
+                <p>Phoebe Buffay é uma das personagens mais únicas e carismáticas de Friends. Conhecida por seu jeito
+                    excêntrico e imprevisível, ela sempre surpreende o grupo com comentários aleatórios, histórias
+                    inusitadas e uma visão de mundo completamente diferente. Sua personalidade divertida traz leveza e
+                    originalidade para a série.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="espaço"></div>
+
+        <div class="box2">
+            <div class="box2-img">
+                <p>
+                    Apesar do jeito engraçado e descontraído, Phoebe possui uma história de vida difícil, o que torna
+                    sua força ainda mais admirável. Mesmo enfrentando diversos desafios no passado, ela escolhe enxergar
+                    a vida de forma positiva e divertida, demonstrando muita resiliência e autenticidade.
+                </p>
+                <img src="./assets/img/friendsRachelNoiva.jpeg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box3">
+            <div class="box3-img">
+                <img src="./assets/img/rachelRossPais.jpeg" alt="">
+                <p>
+                    Phoebe também é extremamente sincera e espontânea. Muitas vezes ela fala exatamente o que pensa sem
+                    perceber o impacto de suas palavras, criando situações engraçadas e inesperadas. Ao mesmo tempo, ela
+                    demonstra ser muito leal e protetora com seus amigos.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="box4">
+            <div class="box4-img">
+                <p>
+                    Outro ponto marcante da personagem é sua paixão pela música. Com seu violão e músicas criativas,
+                    Phoebe cria alguns dos momentos mais icônicos da série, especialmente com a famosa canção “Smelly
+                    Cat”. Seu jeito artístico e livre reforça ainda mais sua personalidade única.
+
+                </p>
+                <img src="./assets/img/monicaChandler.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="box5">
+            <div class="box5-img">
+                <img src="./assets/img/casaMonica.jpg" alt="">
+                <p>
+                    Mesmo sendo tão diferente dos outros personagens, Phoebe é essencial para a dinâmica do grupo. Sua
+                    mistura de humor, sensibilidade e autenticidade faz dela uma personagem inesquecível e muito querida
+                    pelos fãs de Friends.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <a href="https://friends.fandom.com">Se você quiser saber mais sobre nossa querida personagem, acesse
+                aqui!</a>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+<script>
+    let cliques = 0; // variável global apenas para contar os cliques
+
+    function irParaFandom() {
+        cliques++;
+
+        if (cliques >= 1) {
+            alert("Redirecionando!");
+            window.location.href = 'https://friends.fandom.com';
+        }
+    }
+
+
+</script>
