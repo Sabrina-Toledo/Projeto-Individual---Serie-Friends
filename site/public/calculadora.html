@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Descubra quanto tempo levaria para terminar Friends!</h1><br>
+
+    <p>
+        São 236 episódios e 10 temporadas de comédia, amizade e caos em Nova York.
+    </p><br>
+
+
+    Digite quanto tempo livre você tem por dia para assistir episódios:
+    <input type="text" id="input_hora" placeholder="Ex. 2 horas">
+    <select name="" id="select_tipo">
+    <option value="hora">hora</option>
+    <option value="minuto">minuto</option>
+    </select><br>
+
+    <small>Cada episódio tem aproximadamente entre 20 e 23 minutos.</small><br><br>
+
+    Se quiser, informe em quanto tempo você gostaria de terminar a série:
+    <input type="text" id="input_tempo" placeholder="Ex. 3 meses"><br>
+
+    <div id="div_msg"></div>
+
+    <button onclick="calcular()">Calcular</button>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        let friends = {
+            hora: input_hora.value,
+            tempo: input_tempo.value
+        }
+
+
+
+        let episodio = 23
+        let qtdEpisodio = 236
+        let minEpsi = qtdEpisodio * episodio
+
+        let tipo = select_tipo.value
+
+        if (friends.hora == '') {
+            alert(`Preencha o campo corretamente!`)
+        } else {
+
+            if (tipo == 'hora') {
+                friends.minuto = friends.hora * 60
+            } else {
+                friends.minuto = friends.hora
+            }
+
+            let episodiosPorDia = friends.minuto / minEpsi
+
+            let meses = episodiosPorDia / 30
+
+            let porcentagem = (episodiosPorDia / qtdEpisodio) * 100
+
+            div_msg.innerHTML = `
+            Você assistiria aproximadamente 
+            <b>${episodiosPorDia.toFixed(1)}</b> episódios por dia. <br><br>
+
+            Isso representa cerca de 
+            <b>${porcentagem.toFixed(1)}%</b> da série diariamente. <br><br>
+
+            Fração assistida por dia:
+            <b>${episodiosPorDia.toFixed(0)}/${qtdEpisodio}</b> episódios. <br><br>
+
+            Você levaria aproximadamente 
+            <b>${valorfinal.toFixed(0)}</b> dias para terminar Friends. <br><br>
+
+            Isso equivale a cerca de 
+            <b>${meses.toFixed(1)}</b> meses.
+            `
+        }
+    }
+
+</script>

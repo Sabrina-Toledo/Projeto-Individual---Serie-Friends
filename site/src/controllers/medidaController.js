@@ -1,9 +1,10 @@
 var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
-    var idUsuario = req.params.idUsuario;
+    var idGrafico = req.params.idGrafico;
 
-    medidaModel.buscarUltimasMedidas(idUsuario).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas(idGrafico)
+    .then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

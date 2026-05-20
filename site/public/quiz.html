@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Descubra com qual perosnagem você mais se parece</h1>
+
+        <div id="quiz-dinamico">Carregando Perguntas..</div>
+
+        <div id="resultado-container">
+
+            <h2>Seu perfil é:</h2>
+            <p id="resultado"></p>
+            <button onclick="reiniciarQuiz()">Refazer Quiz</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    const listaDeQuestoes = [
+
+        {
+            pergunta: "Como você lida com grandes mudanças na vida (ex: um novo emprego ou término)?",
+            alternativaA: "A) Entro em pânico, mas decido recomeçar do zero e provar meu valor.",
+            alternativaB: "B) Analiso tudo logicamente e tento manter o controle da situação.",
+            alternativaC: "C) Faço piadas para esconder o desconforto e sigo em frente.",
+            alternativaD: "D) Aceito com naturalidade; o que tiver que ser, será.",
+            alternativaE: "E) Fico obcecado(a) pelos detalhes e organizo cada passo da transição.",
+            alternativaF: "F) Vejo como uma oportunidade para novas aventuras e prazeres."
+        },
+
+        {
+            pergunta: "Qual é o seu papel em um grupo de amigos?",
+            alternativaA: "A) O que está sempre evoluindo e descobrindo novas paixões.",
+            alternativaB: "B) O professor que gosta de explicar fatos e corrigir os outros.",
+            alternativaC: "C) O que quebra o gelo com humor quando o clima fica tenso.",
+            alternativaD: "D) A alma espiritual que oferece conselhos alternativos e apoio.",
+            alternativaE: "E) O anfitrião que cuida de tudo e garante que as regras sejam seguidas.",
+            alternativaF: "F) O protetor que está sempre pronto para defender os amigos"
+        },
+
+        {
+            pergunta: "O que mais te irrita nas outras pessoas?",
+            alternativaA: "A) Quando duvidam da minha capacidade ou independência.",
+            alternativaB: "B) Quando alguém não entende um ponto lógico ou científico.",
+            alternativaC: "C) O silêncio constrangedor ou a falta de senso de humor.",
+            alternativaD: "D) Energias negativas e pessoas que maltratam animais/natureza.",
+            alternativaE: "E) Desorganização, sujeira ou falta de pontualidade.",
+            alternativaF: "F) Pessoas que não dividem a comida ou são chatas demais."
+        },
+
+        {
+            pergunta: "Como você expressa seu afeto por alguém?",
+            alternativaA: "A) Com presentes cheios de estilo ou gestos de atenção.",
+            alternativaB: "B) Com grandes gestos românticos, às vezes um pouco dramáticos.",
+            alternativaC: "C) Através de brincadeiras e sendo a companhia mais divertida.",
+            alternativaD: "D) Sendo extremamente leal e ouvindo sem julgamentos.",
+            alternativaE: "E) Cuidando da pessoa (cozinhando, limpando ou organizando a vida dela).",
+            alternativaF: "F) Sendo muito físico, carinhoso e sempre presente."
+        },
+
+        {
+            pergunta: "Qual é o final de semana ideal para você?",
+            alternativaA: "A) Ir às compras no shopping e depois tomar um café no lugar mais badalado da cidade.",
+            alternativaB: "B) Uma visita guiada a um museu ou planetário, seguida de um jantar intimista",
+            alternativaC: "C) Ficar em casa assistindo a um jogo na TV com o meu melhor amigo ou parceiro(a).",
+            alternativaD: "D) Tocar violão em um parque ou ler a sorte de alguém em uma feira mística.",
+            alternativaE: "E) Preparar um jantar temático de três pratos em casa para os meus convidados favoritos.",
+            alternativaF: "F) Ir a um rodízio ou pedir uma pizza grande só para mim enquanto assisto a um filme."
+        }
+
+    ]
+
+    let respostasUsuario = [];
+    let indiceAtual = 0;
+
+    function mostrarPergunta(index) {
+        let quiz = document.getElementById('quiz-dinamico')
+
+        if (index >= listaDeQuestoes.length) {
+            quiz.style.display = 'none';
+            calcularResultado(); // chamar calcular resultado
+            return;
+        }
+
+        const questaoAtual = listaDeQuestoes[index]
+
+        quiz.innerHTML = `
+      <div class= "pergunta-conteiner">
+        <p>${questaoAtual.pergunta}</p>
+      <div class = "opcoes">
+
+        <li> 
+            <label>
+             <input type="radio" id="optA" name="resposta" value="A"> ${questaoAtual.alternativaA}
+            </label>
+        </li>        
+
+        <li> 
+            <label>
+             <input type="radio" id="optB" name="resposta" value="B"> ${questaoAtual.alternativaB}
+            </label>
+        </li>  
+
+        <li>
+            <label>
+             <input type="radio" id="optC" name="resposta" value="C"> ${questaoAtual.alternativaC}
+            </label>
+        </li> 
+
+        <li> 
+            <label>
+             <input type="radio" id="optD" name="resposta" value="D"> ${questaoAtual.alternativaD}
+            </label>
+        </li> 
+
+        <li> 
+            <label>
+             <input type="radio" id="optE" name="resposta" value="E"> ${questaoAtual.alternativaE} 
+            </label> 
+        </li>
+        
+        <li> 
+            <label>
+             <input type="radio" id="optF" name="resposta" value="F"> ${questaoAtual.alternativaF}
+            </label>
+        </li>
+    </div>
+    <button onclick = "proximaPergunta()"> Avançar</button>
+</div>
+    `;
+    }
+
+    function proximaPergunta() {
+
+        let questoes = {
+            opcaoA: document.getElementById('optA'),
+            opcaoB: document.getElementById('optB'),
+            opcaoC: document.getElementById('optC'),
+            opcaoD: document.getElementById('optD'),
+            opcaoE: document.getElementById('optE'),
+            opcaoF: document.getElementById('optF')
+        }
+
+        if (questoes.opcaoA.checked) { // .checked para saber qual foi MARCADA
+            respostasUsuario.push('A')
+        } else if (questoes.opcaoB.checked) {
+            respostasUsuario.push('B')
+        } else if (questoes.opcaoC.checked) {
+            respostasUsuario.push('C')
+        } else if (questoes.opcaoD.checked) {
+            respostasUsuario.push('D')
+        } else if (questoes.opcaoE.checked) {
+            respostasUsuario.push('E')
+        } else if (questoes.opcaoF.checked) {
+            respostasUsuario.push('F')
+        } else {
+            alert('Por favor, selecione um opção antes de avançar!')
+            return;
+        }
+
+        indiceAtual++; // quantidade de perguntas 
+        mostrarPergunta(indiceAtual)
+    }
+
+    function calcularResultado() {
+
+        let pontos = {
+            pontosA: 0,
+            pontosB: 0,
+            pontosC: 0,
+            pontosD: 0,
+            pontosE: 0,
+            pontosF: 0
+        }
+
+        for (let i = 0; i < respostasUsuario.length; i++) { // passando por todas as respostas salvas
+            let respostaAtual = respostasUsuario[i];
+
+            if (respostaAtual == 'A') {
+                pontos.pontosA++;
+            } else if (respostaAtual == 'B') {
+                pontos.pontosB++;
+            } else if (respostaAtual == 'C') {
+                pontos.pontosC++;
+            } else if (respostaAtual == 'D') {
+                pontos.pontosD++;
+            } else if (respostaAtual == 'E') {
+                pontos.pontosE++;
+            } else if (respostaAtual == 'F') {
+                pontos.pontosF++;
+            }
+        }
+
+        let personagem = '';
+        let textoFinal = '';
+
+        if (
+            pontos.pontosA >= pontos.pontosB &&
+            pontos.pontosA >= pontos.pontosC &&
+            pontos.pontosA >= pontos.pontosD &&
+            pontos.pontosA >= pontos.pontosE &&
+            pontos.pontosA >= pontos.pontosF) {
+            personagem = 'Personagem A'
+
+        } else if (
+            pontos.pontosB >= pontos.pontosC &&
+            pontos.pontosB >= pontos.pontosD &&
+            pontos.pontosB >= pontos.pontosE &&
+            pontos.pontosB >= pontos.pontosF) {
+            personagem = 'Personagem B'
+
+        } else if (
+            pontos.pontosC >= pontos.pontosD &&
+            pontos.pontosC >= pontos.pontosE &&
+            pontos.pontosC >= pontos.pontosF) {
+            personagem = 'Personagem C'
+
+        } else if (
+            pontos.pontosD >= pontos.pontosE &&
+            pontos.pontosD >= pontos.pontosF) {
+            personagem = 'Personagem D'
+
+        } else if (
+            pontos.pontosE >= pontos.pontosF) {
+            personagem = 'Personagem E'
+
+        } else {
+            personagem = 'Personagem F'
+        }
+
+        let rachelPersonalidade = `Personalidade: Você carrega uma mistura rara de sensibilidade e ambição. Existe em você um desejo profundo de ser reconhecida não apenas pela aparência ou pelo que esperam de você, mas por quem realmente é. Apesar da insegurança diante do desconhecido, você encontra coragem para se reinventar inúmeras vezes. Valoriza conexões emocionais verdadeiras e aprende, ao longo da vida, que independência não significa deixar de amar alguém, mas conseguir existir por si mesma.`
+        let rachelHistoria = `História: Rachel representa a busca pela identidade própria. Ao sair da zona de conforto (o noivo rico e o sustento dos pais), ela trilhou um caminho de "tentativas e erros" na carreira, trabalhando como garçonete antes de conseguir seu lugar no mundo da moda. Sua relação com Ross reflete seu amadurecimento, oscilando entre altos e baixos até encontrar um equilíbrio na fase adulta.`
+
+        let rossPersonalidade = `Personalidade: Você sente tudo de maneira intensa. Sua mente racional tenta organizar o mundo, mas suas emoções frequentemente falam mais alto. Existe uma necessidade constante de compreender as pessoas, os sentimentos e os acontecimentos ao seu redor, o que faz de você alguém profundamente reflexivo. Apesar da rigidez ocasional, você ama com sinceridade e entrega, carregando uma visão quase idealista sobre relacionamentos e família.`
+        let rossHistoria = `História: Ross enfrenta as idas e vindas de três divórcios sem perder a fé no amor. Sua trajetória mostra o equilíbrio entre a vida acadêmica séria como paleontólogo e o aprendizado de que, na vida pessoal, nem tudo pode ser controlado ou explicado pelos livros.`
+
+        let chandlerPersonalidade = ` Personalidade: Seu humor é mais do que diversão: é um mecanismo de defesa. Você aprendeu a transformar desconforto em ironia e vulnerabilidade em piadas, mas por trás disso existe alguém extremamente observador, sensível e leal. Tem dificuldade em demonstrar fragilidade diretamente, porém se importa profundamente com quem ama. Quando cria confiança, se torna uma das presenças mais constantes e acolhedoras na vida das pessoas.`
+        let chandlerHistoria = ` História: Chandler passou anos em um emprego que odiava e fugindo de compromissos devido a traumas familiares. Sua jornada é sobre superação: ele aprendeu a se abrir para o amor real e teve a coragem de recomeçar do zero na publicidade para encontrar propósito.`
+
+        let phoebePersonalidade = `Personalidade: Você enxerga o mundo de maneira única, quase impossível de ser limitada pelas regras comuns. Sua autenticidade vem de alguém que aprendeu a sobreviver sem depender da validação dos outros. Existe uma força silenciosa em você: mesmo depois de experiências difíceis, escolhe preservar a leveza, a criatividade e a capacidade de acreditar no extraordinário. Sua liberdade emocional inspira quem está ao seu redor.`
+        let phoebeHistoria = `História: Phoebe mesmo com um passado difícil e uma infância de rua, escolheu não ser uma vítima das circunstâncias. Ela criou sua própria realidade, transformando suas tragédias em músicas excêntricas e mantendo uma pureza que ninguém consegue corromper.`
+
+        let monicaPersonalidade = ` Personalidade: Você demonstra amor através do cuidado, da organização e da dedicação intensa às pessoas importantes para você. Existe uma necessidade profunda de sentir controle sobre a própria vida, muitas vezes como resposta a inseguranças antigas. Competitiva e determinada, você coloca o coração em tudo o que faz. Embora tente parecer forte o tempo inteiro, no fundo busca reconhecimento, pertencimento e a sensação de ser suficiente.`
+        let monicaHistoria = ` História: Monica transformou suas inseguranças da juventude em uma força motriz para se tornar uma chef de sucesso. Ela é a "cola" do grupo, provando que ser a anfitriã e ditar as regras é, na verdade, a sua forma mais pura de demonstrar amor e proteção pelos amigos.`
+
+        let joeyPersonalidade = ` Personalidade: Você possui uma bondade genuína e uma forma simples, porém profunda, de enxergar a vida. Valoriza a lealdade acima de qualquer status e prefere relações sinceras a jogos emocionais. Seu jeito leve esconde uma enorme capacidade de proteger e apoiar quem ama. Mesmo quando o mundo parece exigir malícia ou egoísmo, você continua acreditando nas pessoas e vivendo com autenticidade.`
+        let joeyHistoria = ` História: Joey lutou anos como um ator de pequenas peças até conseguir seu papel em Days of Our Lives. Sua história mostra que o sucesso não o mudou: ele continua sendo o amigo que coloca a felicidade do grupo acima de qualquer ambição pessoal ou profissional.`
+
+
+        if (personagem === "Personagem A") {
+            textoFinal = `
+            <p class="personagemFinal">A maioria das respostas foram A! Que significa que você se parece com a Rachel</p>
+            <p class="personalidade"> ${rachelPersonalidade}</p>
+            <p class="historia">${rachelHistoria}</p>
+            `
+        } else if (personagem === "Personagem B") {
+            textoFinal = `
+            <p class="personagemFinal">A maioria das respostas foram B! Que significa que você se parece com o  Ross</p>
+            <p class="personalidade">${rossPersonalidade}</p>
+            <p class="historia">${rossHistoria}</p>
+            `
+        } else if (personagem === "Personagem C") {
+            textoFinal = `
+            <p class="personagemFinal">A maioria das respostas foram C! Que significa que você se parece com o  Chandler</p>
+            <p class="personalidade">${chandlerPersonalidade}</p>
+            <p class="historia">${chandlerHistoria}</p>
+            `
+        } else if (personagem === "Personagem D") {
+            textoFinal = `
+            <p class="personagemFinal">A maioria das respostas foram D! Que significa que você se parece com a Phoebe</p>
+            <p class="personalidade">${phoebePersonalidade}</p>
+            <p class="historia">${phoebeHistoria}</p>
+            `
+        } else if (personagem === "Personagem E") {
+            textoFinal = `
+            <p class="personagemFinal">A maioria das respostas foram E! Que significa que você se parece com a  Monica</p>
+            <p class="personalidade">${monicaPersonalidade}</p>
+            <p class="historia">${monicaHistoria}</p>
+            `
+        } else {
+            textoFinal = `
+            <p class="personagemFinal">A maioria das respostas foram E! Que significa que você se parece com o Joey</p>
+            <p class="personalidade">${joeyPersonalidade}</p>
+            <p class="historia">${joeyHistoria}</p>
+            `
+        }
+
+        document.getElementById('resultado').innerHTML = textoFinal;
+        document.getElementById('resultado-container').style.display = 'block';
+
+        enviaParaBanco(personagem);
+    }
+
+    function enviaParaBanco(personagem) {
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+
+        let dadosSalvar = {
+            idUsuario: sessionStorage.ID_USUARIO,
+            respostas: respostasUsuario,
+            resultadoQuiz: personagem,
+        };
+
+        fetch("/quiz/salvar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosSalvar)
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log("Dados salvos no banco com sucesso!");
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                    })
+
+                } else {
+                    console.error("Erro ao tentar salvar os dados.");
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                    })
+                }
+            })
+            .catch(function (error) {
+                console.log("Erro de rede ao conectar com o servidor:", erro);
+            });
+    }
+
+    function reiniciarQuiz() {
+        respostasUsuario = []
+        indiceAtual = 0;
+
+        document.getElementById('resultado-container').style.display = 'none'
+        document.getElementById('quiz-dinamico').style.display = 'block';
+
+        mostrarPergunta(indiceAtual);
+    }
+    mostrarPergunta(indiceAtual);
+
+</script>

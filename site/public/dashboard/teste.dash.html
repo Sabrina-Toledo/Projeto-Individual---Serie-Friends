@@ -17,156 +17,211 @@
     <title>Dashboard</title>
 </head>
 
-<body>0
-    <div class="container">
+<body>
 
-        <div class="barraLateral">
+<div class="container">
 
-            <div class="img-h1" id="dashboard">
-                <img src="../assets/img/img-png.png" alt="">
-                <p>Bem-vindo(a) ao seu perfil!</p>
+    <div class="barraLateral">
+
+        <div class="img-h1" id="dashboard">
+            <img src="../assets/img/img-png.png" alt="">
+            <p>Bem-vindo(a) <span id="b_usuario">Usuário</span> ao seu perfil!</p>
+        </div>
+
+        <div class="nav-bar">
+            <a href="./dashboard.html#dashboard" class="nav-item">
+                <img src="../assets/img/lagosta (1).png"> Dashboard geral
+            </a>
+
+            <a href="#" class="nav-item">
+                <img src="../assets/img/lagosta (1).png"> Respostas gerais
+            </a>
+
+            <a href="#" class="nav-item">
+                <img src="../assets/img/lagosta (1).png"> Porcentagem de semelhança
+            </a>
+        </div> <!-- NAV-BAR LATERAL-->
+
+        <div class="botao">
+            <button><a href="">Sair</a></button>
+        </div> <!-- BOTAO -->
+
+    </div> <!-- DIV LATERAL -->
+
+    <div class="main"> <!-- "CORPO" PARTE DAS KPI E GRAFICO-->
+
+        <div class="box"> <!-- PARTE DAS KPI E GRAFICO-->
+
+            <div class="box-info"> <!-- PARTE DAS KPIS-->
+
+                <div class="kpi-box">
+                    <div class="h5-img">
+                        <p>A maioria das respostas foram:</p>
+                        <img src="../assets/img/lagosta (1).png">
+                    </div>
+                    <h1 class="informacao">A</h1>
+                    <a href="./respostas.html">Visualizar as demais respostas</a>
+                </div>
+
+                <div class="kpi-box">
+                    <div class="h5-img">
+                        <p>Porcentagem de semelhança:</p>
+                        <img src="../assets/img/lagosta (1).png">
+                    </div>
+
+                    <h1 class="informacao">30%</h1>
+                    <a href="">Visualizar porcentagem</a>
+                </div>
+
+            </div> <!-- PARTE DAS KPIS-->
+
+            <div class="grafico">
+                <h3>Com quem você mais se parece</h3>
+                <div class="pontuacao">
+                    <canvas id="pontuacao"></canvas>
+                </div>
             </div>
 
-            <div class="nav-bar">
-                <a href="./dashboard.html#dashboard" class="nav-item">
-                    <img src="../assets/img/lagosta (1).png"> Dashboard geral
-                </a>
+            <div class="box-info">
+                <div class="kpi-box1"> <!-- PARTE DAS KPIS-->
 
-                <a href="#" class="nav-item">
-                    <img src="../assets/img/lagosta (1).png"> Respostas gerais
-                </a>
-
-                <a href="#" class="nav-item">
-                    <img src="../assets/img/lagosta (1).png"> Porcentagem de semelhança
-                </a>
-            </div> <!-- NAV-BAR LATERAL-->
-
-            <div class="botao">
-                <button><a href="">Sair</a></button>
-            </div> <!-- BOTAO -->
-
-        </div> <!-- DIV LATERAL -->
-
-        <div class="main"> <!-- "CORPO" PARTE DAS KPI E GRAFICO-->
-
-            <div class="box"> <!-- PARTE DAS KPI E GRAFICO-->
-
-                <div class="box-info"> <!-- PARTE DAS KPIS-->
-
-                    <div class="kpi-box">
-                        <div class="h5-img">
-                            <p>A maioria das respostas foram:</p>
-                            <img src="../assets/img/lagosta (1).png">
-                        </div>
-                        <h1 class="informacao">A</h1>
-                        <a href="./respostas.html">Visualizar as demais respostas</a>
+                    <div class="h5-img">
+                        <p>Explicação das respostas</p>
+                        <img src="../assets/img/lagosta (1).png">
                     </div>
 
-                    <div class="kpi-box">
-                        <div class="h5-img">
-                            <p>Porcentagem de semelhança:</p>
-                            <img src="../assets/img/lagosta (1).png">
-                        </div>
-
-                        <h1 class="informacao">30%</h1>
-                        <a href="">Visualizar porcentagem</a>
-                    </div>
+                    <span class="legenda"> Maioria A: Você se parece com a <b style="color: fuchsia;"> Rachel
+                            Green</b></span>
+                    <span class="legenda">Maioria B: Você se parece com a <b style="color: red;"> Ross
+                            Geller</b></span>
+                    <span class="legenda">Maioria C: Você se parece com a <b style="color: blue;"> Chandler
+                            Bing</b></span>
+                    <span class="legenda">Maioria D: Você se parece com a <b style="color: rgb(225, 225, 4);">
+                            Phoebe Buffay</b></span>
+                    <span class="legenda">Maioria E: Você se parece com a <b style="color: orange;"> Monica
+                            Geller</b></span>
+                    <span class="legenda">Maioria F: Você se parece com a <b style="color: greenyellow;"> Joey
+                            Tribbiani</b></span>
 
                 </div> <!-- PARTE DAS KPIS-->
+            </div>
 
-                <div class="grafico">
-                    <h3>Com quem você mais se parece</h3>
-                    <div class="pontuacao">
-                        <canvas id="pontuacao"></canvas>
-                    </div>
-                </div>
+        </div> <!-- PARTE DAS KPI E GRAFICO-->
 
-                <div class="box-info">
-                    <div class="kpi-box1"> <!-- PARTE DAS KPIS-->
-
-                        <div class="h5-img">
-                            <p>Explicação das respostas</p>
-                            <img src="../assets/img/lagosta (1).png">
-                        </div>
-
-                        <span class="legenda"> Maioria A: Você se parece com a <b style="color: fuchsia;"> Rachel
-                                Green</b></span>
-                        <span class="legenda">Maioria B: Você se parece com a <b style="color: red;"> Ross
-                                Geller</b></span>
-                        <span class="legenda">Maioria C: Você se parece com a <b style="color: blue;"> Chandler
-                                Bing</b></span>
-                        <span class="legenda">Maioria D: Você se parece com a <b style="color: rgb(225, 225, 4);">
-                                Phoebe Buffay</b></span>
-                        <span class="legenda">Maioria E: Você se parece com a <b style="color: orange;"> Monica
-                                Geller</b></span>
-                        <span class="legenda">Maioria F: Você se parece com a <b style="color: greenyellow;"> Joey
-                                Tribbiani</b></span>
-
-                    </div> <!-- PARTE DAS KPIS-->
-                </div>
-
-            </div> <!-- PARTE DAS KPI E GRAFICO-->
-
-        </div> <!-- MAIN -->
+    </div> <!-- MAIN -->
 
     </div> <!-- DIV CONTAINER-->
 
 </body>
 
 </html>
-
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO; // recupera o nome do usuario logado
 
-
-    const data2 = {
-        labels: ['Questão 1', 'Questão 2', 'Questão 3', 'Questão 4', 'Questão 5'],
-        datasets: [{
-            label: 'Personalidade',
-            data: [1, 1, 4, 5, 6],
-            backgroundColor: ['#9276E4'],
-            borderColor: '#000000',
-            tension: 0.3,
-            fill: false,
-            pointRadius: 4,
-            pointHoverRadius: 5
-        }]
-    };
     const letras = ['', 'A', 'B', 'C', 'D', 'E', 'F'];
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
+
+    window.onload = obterDadosGrafico;
+
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+    function obterDadosGrafico() {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/quiz/respostas/${idUsuario}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        plotarGrafico(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta) {
+
+
+        let labels = [];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Respostas do quiz',
+                data: [], 
+                backgroundColor: ['#9276E4'],
+                borderColor: '#000000',
+                tension: 0.3,
+                fill: false,
+                pointRadius: 4,
+                pointHoverRadius: 5
+            }]
+        };
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.pergunta);
+            data.datasets[0].data.push(registro.resposta);
+        }
+
+        
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+
                 },
 
-            },
-
-            scales: {
-                y: {
-                    min: 0,
-                    max: 6,
-                    ticks: {
+                scales: {
+                    y: {
+                        min: 1,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
                         callback: function (value) {
-                            return letras[value];
-                        },
-                        stepSize: 1
+                                return letras[value];
+                            },
+
+                        }
                     }
                 }
             }
-        }
-    };
-</script>
-
-<script>
-
-    let graficoBarras = new Chart(
-        document.getElementById('pontuacao'),
-        config2
-    );
+        };
 
 
+        let graficoBarras = new Chart(
+            document.getElementById('pontuacao'),
+            config
+        );
+
+    }
 </script>
