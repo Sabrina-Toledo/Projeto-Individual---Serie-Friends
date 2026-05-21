@@ -3,7 +3,7 @@ var router = express.Router();
 
 var quizController = require("../controllers/quizController");
 
-router.post("/quiz/salvar", function (req, res) {
+router.post("/salvar", function (req, res) {
     quizController.salvarQuiz(req, res);
 });
 

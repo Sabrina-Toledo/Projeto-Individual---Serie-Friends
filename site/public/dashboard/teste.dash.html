@@ -118,7 +118,7 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO; // recupera o nome do usuario logado
 
-    const letras = ['', 'A', 'B', 'C', 'D', 'E', 'F'];
+    const letras = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6 };
 
     window.onload = obterDadosGrafico;
 
@@ -139,7 +139,7 @@
 
         var idUsuario = sessionStorage.ID_USUARIO;
 
-        fetch(`/quiz/respostas/${idUsuario}`, { cache: 'no-store' })
+        fetch(`/medidas/respostas/${idUsuario}`, { cache: 'no-store' })
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -183,7 +183,7 @@
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.pergunta);
-            data.datasets[0].data.push(registro.resposta);
+            data.datasets[0].data.push(letras[registro.resposta]);
         }
 
         

@@ -5,13 +5,16 @@ function salvarQuiz(req, res) {
     var respostas = req.body.respostas;
     var resultadoQuiz = req.body.resultadoQuiz;
 
-    console.log('entrou salvarQuiz' + req.body)
+    console.log('entrou salvarQuiz')
+    console.log(req.body)
     if (idUsuario == undefined) {
         res.status(400).send("O ID do usuário está undefined!");
+    } else if (respostas == undefined) {
+        res.status(400).send("As respostas do quiz está undefined!");
     } else if (resultadoQuiz == undefined) {
         res.status(400).send("O resultado do quiz está undefined!");
     } else {
-        quizModel.salvarQuiz(idUsuario, resultadoQuiz)
+        quizModel.salvarQuiz(idUsuario, respostas, resultadoQuiz)
             .then(
                 function (resultado) {
                     res.status(200).json(resultado);

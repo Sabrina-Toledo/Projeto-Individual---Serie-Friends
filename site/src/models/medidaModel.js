@@ -1,10 +1,17 @@
 var database = require("../database/config");
 
 function buscarUltimasMedidas(idUsuario) {
-    // Esta instrução busca as respostas associando-as ao peso (ID) do personagem
-    var instrucaoSql = `
 
-    `;
+    var instrucaoSql = `
+    SELECT 
+    CONCAT('Pergunta ', respostaQuiz.idresposta) AS pergunta,
+    respostaQuiz.alternativa AS resposta
+
+    FROM respostaQuiz JOIN historicoQuiz
+    ON respostaQuiz.fk_historico = historicoQuiz.idhistorico
+
+    WHERE historicoQuiz.fk_idusuario = ${idUsuario}
+    ORDER BY respostaQuiz.idresposta;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

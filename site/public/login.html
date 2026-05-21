@@ -75,7 +75,7 @@
             </div><br><br>
 
             <div class="buttonLogin">
-                <a href="./quiz.html"><button onclick="login()">Login</button></a>
+                <button onclick="login()">Login</button>
             </div>
         </div>
     </div>
@@ -227,8 +227,8 @@
                         sessionStorage.ID_USUARIO = json.id;
 
                         setTimeout(function () {
-                            window.location = "./dashboard/cards.html";
-                        }, 1000); // apenas para exibir o loading
+                            window.location = "./quiz.html";
+                        }); 
 
                     });
 
