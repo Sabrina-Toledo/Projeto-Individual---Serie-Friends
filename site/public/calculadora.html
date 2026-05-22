@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style_calculadora.css">
     <title>Site Interativo - Friends</title>
 </head>
 
 <body>
 
-    <h1>Descubra quanto tempo levaria para terminar Friends!</h1><br>
+    <h1>Descubra quanto tempo você levaria para terminar Friends!</h1><br>
 
     <p>
         São 236 episódios e 10 temporadas de comédia, amizade e caos em Nova York.
@@ -19,18 +20,24 @@
     Digite quanto tempo livre você tem por dia para assistir episódios:
     <input type="text" id="input_hora" placeholder="Ex. 2 horas">
     <select name="" id="select_tipo">
-    <option value="hora">hora</option>
-    <option value="minuto">minuto</option>
+        <option value="horas">horas</option>
+        <option value="minutos">minutos</option>
     </select><br>
-
     <small>Cada episódio tem aproximadamente entre 20 e 23 minutos.</small><br><br>
 
     Se quiser, informe em quanto tempo você gostaria de terminar a série:
-    <input type="text" id="input_tempo" placeholder="Ex. 3 meses"><br>
+    <input type="text" id="input_tempo" placeholder="Ex. 3 meses">
+    <select name="" id="select_tipo2">
+        <option value="dias">dias</option>
+        <option value="mes">mes</option>
+        <option value="meses">meses</option>
+        <option value="ano">ano</option>
+        <option value="anos">anos</option>
+    </select><br>
 
-    <div id="div_msg"></div>
+    <div id="div_msg"></div><br>
 
-    <button onclick="calcular()">Calcular</button>
+    <button onclick="calcular()">Calcular quanto tempo levaria</button>
 
 </body>
 
@@ -44,23 +51,34 @@
             tempo: input_tempo.value
         }
 
-
-
-        let episodio = 23
-        let qtdEpisodio = 236
-        let minEpsi = qtdEpisodio * episodio
-
         let tipo = select_tipo.value
+
+
+        let episodio = 23 //23 minutos em média cada episodio
+        let qtdEpisodio = 236 //quantidade epsodio
+        let minEpsi = qtdEpisodio * episodio // quantidade de episodio em minuto
 
         if (friends.hora == '') {
             alert(`Preencha o campo corretamente!`)
         } else {
-
             if (tipo == 'hora') {
-                friends.minuto = friends.hora * 60
+                friends.minuto = friends.hora * 60 // multiplica a hora por 60
             } else {
                 friends.minuto = friends.hora
             }
+
+            if (friends.tempo == 'dias') {
+
+            } else if (friends.tempo == 'mes') {
+
+            } else if (friends.tempo == 'meses'){
+
+            } else if (friends.tempo == 'ano') {
+
+            } else if (friends.tempo == 'anos') {
+                
+            }
+
 
             let episodiosPorDia = friends.minuto / minEpsi
 
