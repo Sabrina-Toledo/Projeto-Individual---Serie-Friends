@@ -1,7 +1,7 @@
 var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
-    var idUsuario = req.params.idGrafico;
+    var idUsuario = req.params.idUsuario;
 
     medidaModel.buscarUltimasMedidas(idUsuario)
     .then(function (resultado) {

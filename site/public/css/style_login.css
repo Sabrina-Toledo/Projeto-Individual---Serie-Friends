@@ -122,10 +122,11 @@ Css do navbar
     justify-content: center;
     text-align: center;
     color: #6c4ccf;
-    font-size: 25px;
+    font-size: 22px;
     padding-bottom: 40px;
     font-weight: bold;
     flex-direction: column;
+    gap: 10px;
 
 }
 
@@ -139,7 +140,15 @@ Css do navbar
     padding-top: 5px;
     font-weight: bold;
     flex-direction: column;
+    cursor: pointer;
+}
 
+.subtitulo a{
+        text-decoration: none;
+}
+
+.subtitulo a:hover{
+color: orange
 }
 
 /* CAMPOS */
