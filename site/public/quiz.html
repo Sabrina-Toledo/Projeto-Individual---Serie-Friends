@@ -76,7 +76,6 @@
 
 </html>
 <script>
-    // SEU JSON DE PERGUNTAS CONTINUA EXATAMENTE IGUAL
     const listaDeQuestoes = [
         {
             pergunta: "1. Como você lida com grandes mudanças na vida (ex: um novo emprego ou término)?",
@@ -128,7 +127,6 @@
     let respostasUsuario = [];
     let indiceAtual = 0;
 
-    // ESSA FUNÇÃO APENAS ATUALIZA OS TEXTOS NO HTML EXISTENTE
     function mostrarPergunta(index) {
         let quizContainer = document.getElementById('quiz-dinamico');
 
@@ -140,7 +138,6 @@
 
         const questaoAtual = listaDeQuestoes[index];
 
-        // Atualiza os elementos de texto pelos IDs sem mexer na estrutura de inputs
         document.getElementById('texto-pergunta').innerHTML = questaoAtual.pergunta;
         document.getElementById('textoOptA').innerHTML = questaoAtual.alternativaA;
         document.getElementById('textoOptB').innerHTML = questaoAtual.alternativaB;
@@ -154,7 +151,6 @@
     }
 
     function proximaPergunta() {
-        // Sua lógica original usando document.getElementById (mantida intacta)
         let questoes = {
             opcaoA: document.getElementById('optA'),
             opcaoB: document.getElementById('optB'),
@@ -265,7 +261,6 @@
             personagem = 'Personagem F'
         }
 
-        // Seus textos originais resumidos aqui por espaço
         let rachelPersonalidade = `Personalidade: Você carrega uma mistura rara de sensibilidade e ambição. Existe em você um desejo profundo de ser reconhecida não apenas pela aparência ou pelo que esperam de você, mas por quem realmente é. Apesar da insegurança diante do desconhecido, você encontra coragem para se reinventar inúmeras vezes. Valoriza conexões emocionais verdadeiras e aprende, ao longo da vida, que independência não significa deixar de amar alguém, mas conseguir existir por si mesma.`
         let rachelHistoria = `História: Rachel representa a busca pela identidade própria. Ao sair da zona de conforto (o noivo rico e o sustento dos pais), ela trilhou um caminho de "tentativas e erros" na carreira, trabalhando como garçonete antes de conseguir seu lugar no mundo da moda. Sua relação com Ross reflete seu amadurecimento, oscilando entre altos e baixos até encontrar um equilíbrio na fase adulta.`
 
