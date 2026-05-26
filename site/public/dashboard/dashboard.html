@@ -14,88 +14,108 @@
 
     <div class="container">
 
-        <div class="barraLateral">
+        <div class="containerBase">
 
-            <div class="img-h1" id="dashboard">
-                <img src="../assets/img/img-png.png" alt="">
-                <p>Bem-vindo(a) <span id="b_usuario">Usuário</span> ao seu perfil!</p>
-            </div>
+            <div class="barraLateral">
 
-            <div class="nav-bar">
-                <a href="./dashboard.html#dashboard" class="nav-item">
-                    <img src="../assets/img/lagosta (1).png"> Dashboard
-                </a>
-
-                <a href="../quiz.html" class="nav-item">
-                    <img src="../assets/img/lagosta (1).png"> Acessar o quiz
-                </a>
-            </div> <!-- NAV-BAR LATERAL-->
-
-            <div class="botao">
-                <button><a href="../index.html">Voltar para o site</a></button>
-            </div> <!-- BOTAO -->
-
-        </div> <!-- DIV LATERAL -->
-
-        <div class="main"> <!-- "CORPO" PARTE DAS KPI E GRAFICO-->
-
-            <div class="box"> <!-- PARTE DAS KPI E GRAFICO-->
-
-                <div class="box-info"> <!-- PARTE DAS KPIS-->
-
-                    <div class="kpi-box">
-                        <div class="h5-img">
-                            <p>Você colocou a letra mais vezes no quiz:</p>
-                            <img src="../assets/img/lagosta (1).png">
-                        </div>
-                        <h1 class="informacao" id="kpi_letra"></h1>
-                    </div>
-
-                    <div class="kpi-box">
-                        <div class="h5-img">
-                            <p>A porcentagem de semelhança com esse personagem:</p>
-                            <img src="../assets/img/lagosta (1).png">
-                        </div>
-
-                        <h1 class="informacao" id="kpi_porcentagem"></h1>
-                    </div>
-
-                </div> <!-- PARTE DAS KPIS-->
-
-                <div class="grafico">
-                    <h3>Descubra com qual personagem de friends você mais se parece?</h3>
-                    <div class="pontuacao">
-                        <canvas id="pontuacao"></canvas>
-                    </div>
+                <div class="img-h1" id="dashboard">
+                    <img src="../assets/img/dashboard.jpg" alt="">
                 </div>
 
-                <div class="box-info">
-                    <div class="kpi-box1"> <!-- PARTE DAS KPIS-->
+                <div>
+                    <p>Bem-vindo(a) <span id="b_usuario" style="color: aliceblue;">Usuário</span> ao seu perfil!</p>
+                </div>
 
-                        <div class="h5-img">
-                            <p>Legenda:</p>
-                            <img src="../assets/img/lagosta (1).png">
+                <div class="nav-bar">
+                    <a href="./dashboard.html#dashboard" class="nav-item">
+                        <button class="btn">Dashboard</button>
+                    </a>
+
+                    <a href="../quiz.html" class="nav-item">
+                        <button class="btn">Acessar o quiz novamente</button>
+                    </a>
+
+                    <a href="../calculadora.html" class="nav-item">
+                        <button class="btn">Calculadora</button>
+                    </a>
+
+                    <a href="../index.html" class="nav-item">
+                        <button class="btn">Logout</button>
+                    </a>
+                </div> <!-- NAV-BAR LATERAL-->
+
+            </div> <!-- DIV LATERAL -->
+
+            <div class="main"> <!-- "CORPO" PARTE DAS KPI E GRAFICO-->
+
+                <div class="box"> <!-- PARTE DAS KPI E GRAFICO-->
+
+                    <div class="box-info"> <!-- PARTE DAS KPIS-->
+
+                        <div class="kpi-box">
+                            <div class="h5-img">
+                                <p>Você se parece com o</p>
+                                <img src="../assets/img/lagosta (1).png">
+                            </div>
+                            <h1 class="informacao" id="kpi_personagem"></h1>
                         </div>
 
-                        <span class="legenda"> Maioria A: Você se parece com a <b style="color: fuchsia;"> Rachel
-                                Green</b></span>
-                        <span class="legenda">Maioria B: Você se parece com a <b style="color: red;"> Ross
-                                Geller</b></span>
-                        <span class="legenda">Maioria C: Você se parece com a <b style="color: blue;"> Chandler
-                                Bing</b></span>
-                        <span class="legenda">Maioria D: Você se parece com a <b style="color: rgb(225, 225, 4);">
-                                Phoebe Buffay</b></span>
-                        <span class="legenda">Maioria E: Você se parece com a <b style="color: orange;"> Monica
-                                Geller</b></span>
-                        <span class="legenda">Maioria F: Você se parece com a <b style="color: greenyellow;"> Joey
-                                Tribbiani</b></span>
+                        <div class="kpi-box">
+                            <div class="h5-img">
+                                <p>A porcentagem de semelhança</p>
+                                <img src="../assets/img/lagosta (1).png">
+                            </div>
+                            <h1 class="informacao" id="kpi_porcentagem"></h1>
+                        </div>
+
+
+                        <div class="kpi-box">
+                            <div class="h5-img">
+                                <p>Quantidade de </p>
+                                <img src="../assets/img/lagosta (1).png">
+                            </div>
+                            <h1 class="informacao" id="kpi_porcentagem"></h1>
+                        </div>
 
                     </div> <!-- PARTE DAS KPIS-->
-                </div>
 
-            </div> <!-- PARTE DAS KPI E GRAFICO-->
+                    <div class="grafico">
+                        <h3>Descubra com qual personagem de friends você mais se parece?</h3>
+                        <div class="pontuacao">
+                            <canvas id="pontuacao"></canvas>
+                        </div>
+                    </div>
 
-        </div> <!-- MAIN -->
+
+                    <div class="box-info">
+                        <div class="kpi-box1"> <!-- PARTE DAS KPIS-->
+
+                            <div class="h5-img">
+                                <p>Legenda:</p>
+                                <img src="../assets/img/lagosta (1).png">
+                            </div>
+
+                            <span class="legenda"> Maioria A: Você se parece com a <b style="color: fuchsia;"> Rachel
+                                    Green</b></span>
+                            <span class="legenda">Maioria B: Você se parece com a <b style="color: red;"> Ross
+                                    Geller</b></span>
+                            <span class="legenda">Maioria C: Você se parece com a <b style="color: blue;"> Chandler
+                                    Bing</b></span>
+                            <span class="legenda">Maioria D: Você se parece com a <b style="color: rgb(225, 225, 4);">
+                                    Phoebe Buffay</b></span>
+                            <span class="legenda">Maioria E: Você se parece com a <b style="color: orange;"> Monica
+                                    Geller</b></span>
+                            <span class="legenda">Maioria F: Você se parece com a <b style="color: greenyellow;"> Joey
+                                    Tribbiani</b></span>
+
+                        </div> <!-- PARTE DAS KPIS-->
+                    </div>
+
+                </div> <!-- PARTE DAS KPI E GRAFICO-->
+
+            </div> <!-- MAIN -->
+
+        </div>
 
     </div> <!-- DIV CONTAINER-->
 
@@ -108,18 +128,6 @@
     let personagensLabels = ['Rachel Green', 'Ross Geller', 'Chandler Bing', 'Phoebe Buffay', 'Monica Geller', 'Joey Tribbiani'];
 
     window.onload = obterDadosGrafico;
-
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
-
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
 
     function obterDadosGrafico() {
         var idUsuario = sessionStorage.ID_USUARIO;
@@ -136,7 +144,6 @@
                         console.log(`Dados recebidosdo banco: ${JSON.stringify(resposta)}`);
 
                         console.log(idUsuario)
-
                         plotarGrafico(resposta);
 
                     });
@@ -148,10 +155,6 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
-
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
 
     function plotarGrafico(resposta) {
         let quantidadesBanco = [0, 0, 0, 0, 0, 0];
@@ -190,9 +193,9 @@
             }
         }
 
-        let letrasAlternativas = ['A', 'B', 'C', 'D', 'E', 'F'];
+        document.getElementById("kpi_personagem").innerHTML = personagensLabels[indiceMaior];
 
-        document.getElementById("kpi_letra").innerHTML = letrasAlternativas[indiceMaior];
+
 
         let porcentagemCalculada;
 

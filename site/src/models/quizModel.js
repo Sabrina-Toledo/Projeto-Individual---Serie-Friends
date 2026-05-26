@@ -21,7 +21,6 @@ function salvarQuiz(idUsuario, respostas, resultadoQuiz) {
     })
 
     .then(function(resultado) {
-
         let idHistorico = resultado[0].idHistorico;
 
         let promises = [];
@@ -37,7 +36,6 @@ function salvarQuiz(idUsuario, respostas, resultadoQuiz) {
         }
 
         return Promise.all(promises);
-
     });
     
 }
