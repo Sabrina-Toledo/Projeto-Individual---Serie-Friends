@@ -98,8 +98,10 @@ body {
     z-index: 2;
 
     margin-left: 50px;
+    margin-top: 200px;
     padding-top: 200px;
     text-align: left;
+
 }
 
 .titulo-friends {
@@ -195,12 +197,12 @@ body {
 .card-friends {
     background-color: #e9d9f9;
     width: 500px;
-    padding: 25px;
+    padding: 40px;
     border-radius: 20px;
 
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 2px solid orange;
