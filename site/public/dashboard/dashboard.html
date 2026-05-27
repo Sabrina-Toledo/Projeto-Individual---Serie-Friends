@@ -54,7 +54,7 @@
 
                         <div class="kpi-box">
                             <div class="h5-img">
-                                <p>Você se parece com o</p>
+                                <p>Personagem mais parecido com você</p>
                                 <img src="../assets/img/lagosta (1).png">
                             </div>
                             <h1 class="informacao" id="kpi_personagem"></h1>
@@ -62,7 +62,7 @@
 
                         <div class="kpi-box">
                             <div class="h5-img">
-                                <p>A porcentagem de semelhança</p>
+                                <p>A porcentagem de semelhança com esse personagem</p>
                                 <img src="../assets/img/lagosta (1).png">
                             </div>
                             <h1 class="informacao" id="kpi_porcentagem"></h1>
@@ -71,16 +71,16 @@
 
                         <div class="kpi-box">
                             <div class="h5-img">
-                                <p>Quantidade de </p>
+                                <p>O segundo personagem mais parecido</p>
                                 <img src="../assets/img/lagosta (1).png">
                             </div>
-                            <h1 class="informacao" id="kpi_porcentagem"></h1>
+                            <h1 class="informacao" id="kpi_segundo"></h1>
                         </div>
 
                     </div> <!-- PARTE DAS KPIS-->
 
                     <div class="grafico">
-                        <h3>Descubra com qual personagem de friends você mais se parece?</h3>
+                        <h3 style="color:#1d1242;">Alternativas marcadas por personagem</h3>
                         <div class="pontuacao">
                             <canvas id="pontuacao"></canvas>
                         </div>
@@ -95,21 +95,32 @@
                                 <img src="../assets/img/lagosta (1).png">
                             </div>
 
-                            <span class="legenda"> Maioria A: Você se parece com a <b style="color: fuchsia;"> Rachel
+                            <span class="legenda"> Se a maioria das suas respostas forem <b
+                                    style="color: fuchsia;">A</b>: Você se parece com a <b style="color: fuchsia;">
+                                    Rachel
                                     Green</b></span>
-                            <span class="legenda">Maioria B: Você se parece com a <b style="color: red;"> Ross
+                            <span class="legenda">Se a maioria das suas respostas forem <b style="color: red;">B</b>:
+                                Você se parece com a <b style="color: red;"> Ross
                                     Geller</b></span>
-                            <span class="legenda">Maioria C: Você se parece com a <b style="color: blue;"> Chandler
+                            <span class="legenda">Se a maioria das suas respostas forem <b style="color: blue;">C</b>:
+                                Você se parece com a <b style="color: blue;"> Chandler
                                     Bing</b></span>
-                            <span class="legenda">Maioria D: Você se parece com a <b style="color: rgb(225, 225, 4);">
+                            <span class="legenda">Se a maioria das suas respostas forem <b
+                                    style="color: rgb(225, 225, 4);">D</b>: Você se parece com a <b
+                                    style="color: rgb(225, 225, 4);">
                                     Phoebe Buffay</b></span>
-                            <span class="legenda">Maioria E: Você se parece com a <b style="color: orange;"> Monica
+                            <span class="legenda">Se a maioria das suas respostas forem <b style="color: orange;">E</b>:
+                                Você se parece com a <b style="color: orange;"> Monica
                                     Geller</b></span>
-                            <span class="legenda">Maioria F: Você se parece com a <b style="color: greenyellow;"> Joey
+                            <span class="legenda">Se a maioria das suas respostas forem <b
+                                    style="color: greenyellow;">F</b>: Você se parece com a <b
+                                    style="color: greenyellow;"> Joey
                                     Tribbiani</b></span>
 
                         </div> <!-- PARTE DAS KPIS-->
                     </div>
+
+
 
                 </div> <!-- PARTE DAS KPI E GRAFICO-->
 
@@ -178,7 +189,7 @@
             }
         }
 
-        //ATUALIZAÇÃO DAS KPIS
+        //
         let maiorPontuacao = 0;
         let indiceMaior = 0;
         let totalRespostas = 0;
@@ -195,8 +206,25 @@
 
         document.getElementById("kpi_personagem").innerHTML = personagensLabels[indiceMaior];
 
+        //
+        let segundaMaiorPontuacao = 0;
+        let indiceSegundo = 0;
 
+        for (let j = 0; j < quantidadesBanco.length; j++) {
 
+            if (
+                quantidadesBanco[j] > segundaMaiorPontuacao &&
+                quantidadesBanco[j] < maiorPontuacao
+            ) {
+                segundaMaiorPontuacao = quantidadesBanco[j];
+                indiceSegundo = j;
+            }
+        }
+
+        document.getElementById("kpi_segundo").innerHTML =
+            personagensLabels[indiceSegundo];
+
+        //
         let porcentagemCalculada;
 
         if (totalRespostas > 0) {
@@ -206,7 +234,7 @@
         } document.getElementById("kpi_porcentagem").innerHTML = `${porcentagemCalculada}%`;
 
         const data = {
-            labels: personagensLabels,
+
             datasets: [{
                 label: 'Suas Escolhas',
                 data: quantidadesBanco,
@@ -230,10 +258,6 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: {
-                        display: true,
-                        position: 'right', // Coloca as legendas dos personagens do lado direito
-                    }
                 },
                 scales: {
                     r: {
