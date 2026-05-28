@@ -252,12 +252,17 @@
         };
 
         const config = {
+            label: personagensLabels,
             type: 'polarArea',
             data: data,
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
+                    legend: {
+                        display: true,
+                        position: 'right', // Coloca as legendas dos personagens do lado direito
+                    }
                 },
                 scales: {
                     r: {
