@@ -40,7 +40,11 @@
                     </a>
 
                     <a href="../index.html" class="nav-item">
-                        <button class="btn">Logout</button>
+                        <button class="btn">Sair</button>
+                    </a>
+
+                    <a href="../index.html#personagens" class="nav-item">
+                        <button class="btn">Personagens</button>
                     </a>
                 </div> <!-- NAV-BAR LATERAL-->
 
@@ -168,13 +172,13 @@
     }
 
     function plotarGrafico(resposta) {
-        let quantidadesBanco = [0, 0, 0, 0, 0, 0];
+        let quantidadesBanco = [0, 0, 0, 0, 0, 0]; // qts letras aparece no banco
 
         for (let i = 0; i < resposta.length; i++) {
 
             let alternativaMarcada = resposta[i].resposta;
 
-            if (alternativaMarcada == 'A') {
+            if (alternativaMarcada == 'A') { // verifica se foi marcada e adiciona na posição
                 quantidadesBanco[0]++;
             } else if (alternativaMarcada == 'B') {
                 quantidadesBanco[1]++;
@@ -190,32 +194,32 @@
         }
 
         //
-        let maiorPontuacao = 0;
-        let indiceMaior = 0;
-        let totalRespostas = 0;
+        // let quantidadesBanco = [0, 0, 0, 0, 0, 0]; // qts letras aparece no banco
+
+        let maiorPontuacao = 0; // o maior num
+        let indiceMaior = 0; // posicao do num
+        let totalRespostas = 0; 
 
         for (let j = 0; j < quantidadesBanco.length; j++) {
 
-            totalRespostas += quantidadesBanco[j];
+            totalRespostas += quantidadesBanco[j]; // soma
 
             if (quantidadesBanco[j] > maiorPontuacao) {
                 maiorPontuacao = quantidadesBanco[j];
-                indiceMaior = j;
+                indiceMaior = j; // guarda a posicao do maior dentro do vetor
             }
         }
 
         document.getElementById("kpi_personagem").innerHTML = personagensLabels[indiceMaior];
 
         //
+        //exemplo [1,2,0,0,0,2]
         let segundaMaiorPontuacao = 0;
         let indiceSegundo = 0;
 
         for (let j = 0; j < quantidadesBanco.length; j++) {
 
-            if (
-                quantidadesBanco[j] > segundaMaiorPontuacao &&
-                quantidadesBanco[j] < maiorPontuacao
-            ) {
+            if (quantidadesBanco[j] >= segundaMaiorPontuacao && quantidadesBanco[j] <= maiorPontuacao) {
                 segundaMaiorPontuacao = quantidadesBanco[j];
                 indiceSegundo = j;
             }
@@ -228,16 +232,16 @@
         let porcentagemCalculada;
 
         if (totalRespostas > 0) {
-            porcentagemCalculada = Number((maiorPontuacao / totalRespostas) * 100);
+            porcentagemCalculada = Number((maiorPontuacao / totalRespostas) * 100); // maior resposta e o total de pergunta
         } else {
             porcentagemCalculada = 0;
         } document.getElementById("kpi_porcentagem").innerHTML = `${porcentagemCalculada}%`;
 
         const data = {
 
-            datasets: [{
+            datasets: [{ // conjunt dados
                 label: 'Suas Escolhas',
-                data: quantidadesBanco,
+                data: quantidadesBanco, 
                 backgroundColor: [
                     '#ff00ff',   // Rachel (A) - Fuchsia
                     '#ff0000',    // Ross (B) - Vermelho

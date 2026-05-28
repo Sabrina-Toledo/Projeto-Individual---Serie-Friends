@@ -38,43 +38,46 @@
         <div class="caixaBranca">
             <div class="titulo">
                 Faça o seu login para jogar o quiz!
-
-                <div class="subtitulo">
-                    <a href="./cadastro.html"><span>Se caso não tiver conta ainda, acesse aqui!</span></a>
-                </div>
             </div>
 
             <div class="campo">
                 <span>Digite o seu nome</span>
-                <input type="text" id="input_nome">
-                <div class="error" id="nome-required-error">O campo nome não pode estar vazio</div>
-                <div class="error" id="nome-invalid-error">Insira um nome valido</div>
-            </div><br><br>
+                <input type="text" id="input_nome" placeholder="">
+
+                <div class="error" id="nome-campoVazio">O campo nome não pode estar vazio</div>
+                <div class="error" id="nome-invalido">Insira um nome valido</div>
+            </div>
 
             <div class="campo">
                 <span>Digite o seu e-mail</span>
                 <input type="email" id="input_email">
-                <div class="error" id="email-required-error">O campo e-mail não pode estar vazio</div>
-                <div class="error" id="email-invalid-error">E-mail está inválido</div>
-                <div class="error" id="email-falta-error">E-mail deve conter @ e .</div>
-                <div class="error" id="email-finalizacao-error">E-mail deve finalizar com .com ou .br</div>
-            </div><br><br>
+
+                <div class="error" id="email-campoVazio">O campo e-mail não pode estar vazio</div>
+                <div class="error" id="email-invalido">E-mail está inválido</div>
+                <div class="error" id="email-falta@e.">E-mail deve conter @ e .</div>
+                <div class="error" id="email-finalizacao">E-mail deve finalizar com .com ou .br</div>
+            </div>
 
             <div class="campo">
-                <span>Digite a sua senha</span>
+                <span>Crie a sua senha</span>
                 <input type="password" id="input_senha">
                 <small style="color: #430dda;">*Deve conter pelo menos 1 letra maiúscula, 1 letra minúscula, 1 caractere
-                    especial e 1 número</small>
-                <div class="error" id="senha-required-error">O campo senha não pode estar vazio</div>
-                <div class="error" id="senha-comprimento-error">Senha deve conter pelo menos 6 caracteres.</div>
-                <div class="error" id="senha-numero-error">Senha deve conter pelo menos um número.</div>
-                <div class="error" id="senha-caractere-error">Senha deve conter pelo menos um caractere especial.</div>
-                <div class="error" id="senha-maiuscula-error">Senha deve conter pelo menos uma letra maiúscula.</div>
-                <div class="error" id="senha-minuscula-error">Senha deve conter pelo menos uma letra minúscula.</div>
-            </div><br><br>
+                    especial e 1 número </small>
+
+                <div class="error" id="senha-campoVazio">O campo senha não pode estar vazio</div>
+                <div class="error" id="senha-comprimento">Senha deve conter pelo menos 6 caracteres.</div>
+                <div class="error" id="senha-numero">Senha deve conter pelo menos um número.</div>
+                <div class="error" id="senha-caracteres">Senha deve conter pelo menos um caractere especial.</div>
+                <div class="error" id="senha-maiuscula">Senha deve conter pelo menos uma letra maiúscula.</div>
+                <div class="error" id="senha-minuscula">Senha deve conter pelo menos uma letra minúscula.</div>
+            </div>
 
             <div class="buttonLogin">
                 <button onclick="login()">Login</button>
+            </div>
+
+            <div class="subtitulo">
+                <a href="./cadastro.html"><span>Se caso não tiver conta ainda, acesse aqui!</span></a>
             </div>
         </div>
     </div>
@@ -100,57 +103,57 @@
         // validando vazio no nome
         if (nome === '') {
             valido = false;
-            document.getElementById('nome-required-error').style.display = "block";
+            document.getElementById('nome-campoVazio').style.display = "block";
         } else {
-            document.getElementById('nome-required-error').style.display = "none";
+            document.getElementById('nome-campoVazio').style.display = "none";
         }
         // validando tamanho no nome
         if (nome.length <= 2) {
             valido = false;
-            document.getElementById(`nome-invalid-error`).style.display = 'block';
+            document.getElementById(`nome-invalido`).style.display = 'block';
         } else {
-            document.getElementById(`nome-invalid-error`).style.display = 'none';
+            document.getElementById(`nome-invalido`).style.display = 'none';
         }
 
         // validando vazio no email
         if (email === '') {
             valido = false;
-            document.getElementById('email-required-error').style.display = "block";
+            document.getElementById('email-campoVazio').style.display = "block";
         } else {
-            document.getElementById('email-required-error').style.display = "none";
+            document.getElementById('email-campoVazio').style.display = "none";
         }
         // validando 
         if (!(email.includes("@") && email.includes("."))) {
             valido = false;
-            document.getElementById('email-falta-error').style.display = 'block';
+            document.getElementById('email-falta@e.').style.display = 'block';
         } else {
-            document.getElementById('email-falta-error').style.display = 'none';
+            document.getElementById('email-falta@e.').style.display = 'none';
         }
 
         if (!(email.endsWith(".com") || email.endsWith(".br"))) {
             valido = false;
-            document.getElementById('email-invalid-error').style.display = 'block';
-            document.getElementById('email-finalizacao-error').style.display = 'block';
+            document.getElementById('email-invalido').style.display = 'block';
+            document.getElementById('email-finalizacao').style.display = 'block';
         } else {
-            document.getElementById('email-invalid-error').style.display = 'none';
-            document.getElementById('email-finalizacao-error').style.display = 'none';
+            document.getElementById('email-invalido').style.display = 'none';
+            document.getElementById('email-finalizacao').style.display = 'none';
         }
 
         // validando vazio na senha
         if (senha === '') {
             valido = false;
-            document.getElementById('senha-required-error').style.display = "block";
+            document.getElementById('senha-campoVazio').style.display = "block";
         } else {
-            document.getElementById('senha-required-error').style.display = "none";
+            document.getElementById('senha-campoVazio').style.display = "none";
         }
 
         // validando comprimento da senha 
 
         if (senha.length < 6) {
             valido = false;
-            document.getElementById('senha-comprimento-error').style.display = "block";
+            document.getElementById('senha-comprimento').style.display = "block";
         } else {
-            document.getElementById('senha-comprimento-error').style.display = "none";
+            document.getElementById('senha-comprimento').style.display = "none";
         }
 
         // validando se tem número
@@ -163,9 +166,9 @@
 
         if (!temNumero) {
             valido = false;
-            document.getElementById('senha-numero-error').style.display = "block";
+            document.getElementById('senha-numero').style.display = "block";
         } else {
-            document.getElementById('senha-numero-error').style.display = "none";
+            document.getElementById('senha-numero').style.display = "none";
         }
 
         // validando se tem caracteres
@@ -178,9 +181,9 @@
 
         if (!temCaractere) {
             valido = false;
-            document.getElementById('senha-caractere-error').style.display = "block";
+            document.getElementById('senha-caracteres').style.display = "block";
         } else {
-            document.getElementById('senha-caractere-error').style.display = "none";
+            document.getElementById('senha-caracteres').style.display = "none";
         }
 
 
@@ -188,18 +191,18 @@
 
         if (senha == senha.toLowerCase()) {
             valido = false;
-            document.getElementById('senha-maiuscula-error').style.display = "block";
+            document.getElementById('senha-maiuscula').style.display = "block";
         } else {
-            document.getElementById('senha-maiuscula-error').style.display = "none";
+            document.getElementById('senha-maiuscula').style.display = "none";
         }
 
         // validando se tem letra minuscula
 
         if (senha == senha.toUpperCase()) {
             valido = false;
-            document.getElementById('senha-minuscula-error').style.display = "block";
+            document.getElementById('senha-minuscula').style.display = "block";
         } else {
-            document.getElementById('senha-minuscula-error').style.display = "none";
+            document.getElementById('senha-minuscula').style.display = "none";
         }
 
         if (valido) {
@@ -227,7 +230,7 @@
 
                         setTimeout(function () {
                             window.location = "./quiz.html";
-                        }); 
+                        });
 
                     });
 

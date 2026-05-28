@@ -15,6 +15,7 @@
 
         <div id="quiz-dinamico">
             <div class="pergunta-conteiner">
+                
                 <p id="texto-pergunta">Carregando Pergunta...</p>
 
                 <div class="opcoes">
@@ -131,7 +132,7 @@
         let quizContainer = document.getElementById('quiz-dinamico');
 
         if (index >= listaDeQuestoes.length) {
-            quizContainer.style.display = 'none';
+            quizContainer.style.display = 'none'; // desaparece 
             calcularResultado();
             return;
         }

@@ -83,10 +83,9 @@ Css do navbar
 
 /* CONTAINER PRINCIPAL */
 .container {
-    width: 100%;
+    width: 67%;
     height: 630px;
     display: flex;
-    max-width: 900px;
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
@@ -114,6 +113,7 @@ Css do navbar
     flex-direction: column;
     justify-content: center;
     padding: 40px;
+    gap: 40px;
 }
 
 /* ARRUMA O BLOCO DO TÍTULO */
@@ -123,10 +123,8 @@ Css do navbar
     text-align: center;
     color: #6c4ccf;
     font-size: 22px;
-    padding-bottom: 40px;
     font-weight: bold;
     flex-direction: column;
-    gap: 10px;
 
 }
 
@@ -143,9 +141,6 @@ Css do navbar
     cursor: pointer;
 }
 
-.subtitulo a{
-        text-decoration: none;
-}
 
 .subtitulo a:hover{
 color: orange
@@ -182,7 +177,6 @@ small {
 .buttonLogin {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
 }
 
 .buttonLogin button {

@@ -84,9 +84,8 @@ Css do navbar
 /* CONTAINER PRINCIPAL */
 .container {
     display: flex;
-    width: 100%;
+    width: 67%;
     height: 670px;
-    max-width: 900px;
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
