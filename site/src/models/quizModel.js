@@ -15,7 +15,7 @@ function salvarQuiz(idUsuario, respostas, resultadoQuiz) {
         SELECT MAX(idhistorico) AS idHistorico
             FROM historicoQuiz
             WHERE fk_idusuario = ${idUsuario};
-        `;
+        `; // busca o id do ultimo quiz realizado pelo usuario
     return database.executar(buscarId);
 
     })

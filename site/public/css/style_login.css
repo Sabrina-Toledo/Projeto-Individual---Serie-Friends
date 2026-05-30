@@ -33,10 +33,6 @@ body {
 
 }
 
-/*
-Css do navbar
-*/
-
 .img-friends {
     display: flex;
     align-items: center;
@@ -81,7 +77,6 @@ Css do navbar
 }
 
 
-/* CONTAINER PRINCIPAL */
 .container {
     width: 67%;
     height: 630px;
@@ -93,7 +88,6 @@ Css do navbar
     margin-top: 50px;
 }
 
-/* LADO DA IMAGEM */
 .img {
     width: 50%;
     height: 100%;
@@ -104,7 +98,6 @@ Css do navbar
     height: 100%;
 }
 
-/* CAIXA DA DIREITA */
 .caixaBranca {
     width: 50%;
     height: 100%;
@@ -116,7 +109,6 @@ Css do navbar
     gap: 40px;
 }
 
-/* ARRUMA O BLOCO DO TÍTULO */
 .titulo {
     display: flex;
     justify-content: center;
@@ -146,7 +138,6 @@ Css do navbar
 color: orange
 }
 
-/* CAMPOS */
 .campo {
     display: flex;
     flex-direction: column;
@@ -160,7 +151,6 @@ color: orange
 
 }
 
-/* INPUTS */
 input {
     padding: 10px;
     border-radius: 10px;
@@ -168,12 +158,10 @@ input {
     background-color: #F7F0FF;
 }
 
-/* TEXTO PEQUENO */
 small {
     font-size: 10px;
 }
 
-/* BOTÃO */
 .buttonLogin {
     display: flex;
     justify-content: center;

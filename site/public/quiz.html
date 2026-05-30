@@ -129,9 +129,9 @@
     let indiceAtual = 0;
 
     function mostrarPergunta(index) {
-        let quizContainer = document.getElementById('quiz-dinamico');
+        let quizContainer = document.getElementById('quiz-dinamico'); 
 
-        if (index >= listaDeQuestoes.length) {
+        if (index >= listaDeQuestoes.length) { // funcao conta o indice 
             quizContainer.style.display = 'none'; // desaparece 
             calcularResultado();
             return;
@@ -161,7 +161,7 @@
             opcaoF: document.getElementById('optF')
         }
 
-        if (questoes.opcaoA.checked) {
+        if (questoes.opcaoA.checked) { // verifica se está marcado 
             respostasUsuario.push('A')
         } else if (questoes.opcaoB.checked) {
             respostasUsuario.push('B')
@@ -182,7 +182,7 @@
         mostrarPergunta(indiceAtual);
     }
 
-    function desmarcarRadios() {
+    function desmarcarRadios() { 
         document.getElementById('optA').checked = false;
         document.getElementById('optB').checked = false;
         document.getElementById('optC').checked = false;
@@ -191,7 +191,7 @@
         document.getElementById('optF').checked = false;
     }
 
-    function calcularResultado() {
+    function calcularResultado() { 
         let pontos = {
             pontosA: 0,
             pontosB: 0,
@@ -205,7 +205,7 @@
 
             let respostaAtual = respostasUsuario[i];
 
-            if (respostaAtual == 'A') {
+            if (respostaAtual == 'A') { // atribui os pontos no json pontos
                 pontos.pontosA++;
 
             } else if (respostaAtual == 'B') {
@@ -306,7 +306,7 @@
         let idUsuarioVar = sessionStorage.ID_USUARIO;
 
         let dadosSalvar = {
-            idUsuario: sessionStorage.ID_USUARIO,
+            idUsuario: sessionStorage.ID_USUARIO, // envia pro banco. front -> fetch("/quiz/salvar") -> QuizController -> QuizModel -> INSERT no banco
             respostas: respostasUsuario,
             resultadoQuiz: personagem,
         };

@@ -219,7 +219,7 @@
 
         for (let j = 0; j < quantidadesBanco.length; j++) {
 
-            if (quantidadesBanco[j] >= segundaMaiorPontuacao && quantidadesBanco[j] <= maiorPontuacao) {
+            if (quantidadesBanco[j] > segundaMaiorPontuacao && quantidadesBanco[j] < maiorPontuacao) {
                 segundaMaiorPontuacao = quantidadesBanco[j];
                 indiceSegundo = j;
             }

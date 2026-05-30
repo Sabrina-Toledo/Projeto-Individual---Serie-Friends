@@ -11,10 +11,11 @@ body {
     background: linear-gradient(#533f93, #aa96ed);
     min-height: 100vh;
     padding: 40px 20px 60px;
-    font-family: 'Nunito', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Nunito', sans-serif;
+
 }
 
 .cabecalho {
@@ -32,19 +33,12 @@ body {
 
     padding: 0 8%;
     background: #F0EBFF;
-    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
 }
-
-/*
-Css do navbar
-*/
 
 .img-friends {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
-
+    flex-shrink: 0; /*impede que um elemento diminua de tamanho*/
 }
 
 
@@ -64,7 +58,6 @@ Css do navbar
 
     list-style: none;
     gap: 20px;
-
 }
 
 .nav-bar a {
@@ -104,7 +97,6 @@ p {
     margin-bottom: 30px;
 }
 
-/* CARD CENTRAL */
 .container-calculadora {
     width: 100%;
     max-width: 600px;
@@ -155,7 +147,6 @@ select {
     outline: none;
 }
 
-/* RESULTADO */
 #div_msg {
     font-size: 15px;
     font-weight: 600;

@@ -6,10 +6,8 @@ function buscarUltimasMedidas(req, res) {
     medidaModel.buscarUltimasMedidas(idUsuario)
         .then(function (resultado) {
             if (resultado.length > 0) {
-                // Se o banco achar dados, devolve status 200
                 res.status(200).json(resultado);
             } else {
-                // Se não achar nada responde 204 (No Content)
                 res.status(204).send("Nenhum resultado encontrado para este usuário!");
             }
         })
